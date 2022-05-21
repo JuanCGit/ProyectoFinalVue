@@ -32,6 +32,7 @@
             color: #e9172b;
         }
     }
+
     .navbar {
         box-shadow: 5px 5px 10px rgb(204, 204, 204);
     }
