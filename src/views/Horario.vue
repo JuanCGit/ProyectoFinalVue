@@ -203,7 +203,7 @@
 
         /*TD*/
         tr td:hover {
-            color: black;
+            color: rgb(245, 222, 179);
             background-color: rgb(58, 51, 53);
         }
 
@@ -217,12 +217,12 @@
 
         /*IDS*/
         #descanso {
-            color: rgb(58, 51, 53);
+            color: rgb(245, 222, 179);
             background-color: rgb(161, 24, 6);
             font-weight: bold;
         }
         #descanso2 {
-            color: rgb(58, 51, 53);
+            color: rgb(245, 222, 179);
             background-color: rgb(161, 24, 6);
             font-weight: bold;
         }
