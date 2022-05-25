@@ -1,11 +1,11 @@
 # mygym
 
-## Project setup
+## Instalar dependencias [necesario]
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Ejecutar en el navegador
 ```
 npm run serve
 ```
@@ -15,7 +15,7 @@ npm run serve
 npm run build
 ```
 
-### Lints and fixes files
+### Lintea y arregla los archivos
 ```
 npm run lint
 ```
