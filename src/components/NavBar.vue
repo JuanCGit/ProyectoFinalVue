@@ -11,7 +11,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'Home' ? 'active-nav' : ''" to="/"><h4>Home</h4></router-link></li>
                 <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'Contact' ? 'active-nav' : ''" to="/contact"><h4>Contact</h4></router-link></li>
-                <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'Merchandising' ? 'active-nav' : ''" to="/merchandising"><h4>Merchandising</h4></router-link></li>
+                <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'Tienda' ? 'active-nav' : ''" to="/tienda"><h4>Tienda</h4></router-link></li>
                 <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'Teachers' ? 'active-nav' : ''" to="/teachers"><h4>Teachers</h4></router-link></li>
                 <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'About' ? 'active-nav' : ''" to="/about"><h4>About</h4></router-link></li>
             </ul>
