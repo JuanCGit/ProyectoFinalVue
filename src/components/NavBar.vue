@@ -13,6 +13,7 @@
                 <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'Contact' ? 'active-nav' : ''" to="/contact"><h4>Contact</h4></router-link></li>
                 <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'Horario' ? 'active-nav' : ''" to="/horario"><h4>Horario</h4></router-link></li>
                 <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'Teachers' ? 'active-nav' : ''" to="/teachers"><h4>Teachers</h4></router-link></li>
+                <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'Inscripcion' ? 'active-nav' : ''" to="/inscripcion"><h4>Inscripcion</h4></router-link></li>
                 <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'About' ? 'active-nav' : ''" to="/about"><h4>About</h4></router-link></li>
             </ul>
         </div>
