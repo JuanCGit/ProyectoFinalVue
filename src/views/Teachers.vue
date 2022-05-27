@@ -1,7 +1,7 @@
 <template>
   <div class="home containerTeacher">
     <h1 class="mb-5 mainColor">Our Teachers</h1>
-    <div class="row flex-row">
+    <div class="row gx-0 flex-row">
         <div class="col"></div>
         <div class="col d-flex justify-content-center align-items-center">
           <div class="menuItem" @click="activityType = 'r'" :class="[activityType == 'r' ? 'isActive' : '']">
@@ -65,7 +65,7 @@ export default {
           {name: "Morad Casal", bio: "Bio Morad Casal", img: "MoradCasal.png"}
         ],
         spinningTeacher : [
-          {name: "Alba Fabregas", bio: "Alba Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta, eum! Hic, totam perspiciatis vero, ipsa facere odit recusandae molestiae optio excepturi distinctio odio. Possimus eos magnam ducimus omnis laborum eligendi quos. Similique iste magnam, quod nulla voluptates recusandae aut numquam excepturi ipsam cumque, reprehenderit enim impedit quos necessitatibus. Perferendis enim repellat iure velit doloremque temporibus nesciunt molestias assumenda cum, delectus libero nemo ratione amet incidunt? Animi earum ex nostrum quo odio! Aliquam perspiciatis veritatis pariatur voluptas quos libero fuga tenetur delectus quam iste eum facilis nam, fugiat rem, non expedita obcaecati ex. Fuga commodi officiis quo aut laudantium maxime officia quia quam in obcaecati ad perferendis explicabo atque tempora minima ducimus consequuntur placeat, earum laborum blanditiis iure tenetur hic deleniti? Harum perspiciatis sunt nisi dicta pariatur eveniet! Tenetur modi fugiat quisquam quis iure eveniet at dolore a? Aliquam at non nemo, quae optio, modi, ab suscipit nam sint voluptatem veritatis?", img: "AlbaFabregas.png"},
+          {name: "Alba Fabregas", bio: "Alba Lorem ipsum dolor consectetur adipisicing elit. Dicta, eum! Hic, totam perspiciatis vero, ipsa facere odit recusandae molestiae optio excepturi distinctio odio. Possimus eos magnam ducimus omnis laborum eligendi quos. Similique iste magnam, quod nulla voluptates recusandae aut numquam excepturi ipsam cumque, reprehenderit enim impedit quos necessitatibus. Perferendis enim repellat iure velit doloremque temporibus nesciunt molestias assumenda cum, delectus libero nemo ratione amet incidunt? Animi earum ex nostrum quo odio! Aliquam perspiciatis veritatis pariatur voluptas quos libero fuga tenetur delectus quam iste eum facilis nam, fugiat rem, non expedita obcaecati ex. Fuga commodi officiis quo aut laudantium maxime officia quia quam in obcaecati ad perferendis explicabo atque tempora minima ducimus consequuntur placeat, earum laborum blanditiis iure tenetur hic deleniti? Harum perspiciatis sunt nisi dicta pariatur eveniet! Tenetur modi fugiat quisquam quis iure eveniet at dolore a? Aliquam at non nemo, quae optio, modi, ab suscipit nam sint voluptatem veritatis?", img: "AlbaFabregas.png"},
           {name: "Álvaro Raga", bio: "Álvaro Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta, eum! Hic, totam perspiciatis vero, ipsa facere odit recusandae molestiae optio excepturi distinctio odio. Possimus eos magnam ducimus omnis laborum eligendi quos. Similique iste magnam, quod nulla voluptates recusandae aut numquam excepturi ipsam cumque, reprehenderit enim impedit quos necessitatibus. Perferendis enim repellat iure velit doloremque temporibus nesciunt molestias assumenda cum, delectus libero nemo ratione amet incidunt? Animi earum ex nostrum quo odio! Aliquam perspiciatis veritatis pariatur voluptas quos libero fuga tenetur delectus quam iste eum facilis nam, fugiat rem, non expedita obcaecati ex. Fuga commodi officiis quo aut laudantium maxime officia quia quam in obcaecati ad perferendis explicabo atque tempora minima ducimus consequuntur placeat, earum laborum blanditiis iure tenetur hic deleniti? Harum perspiciatis sunt nisi dicta pariatur eveniet! Tenetur modi fugiat quisquam quis iure eveniet at dolore a? Aliquam at non nemo, quae optio, modi, ab suscipit nam sint voluptatem veritatis?", img: "AlvaroPizcueta.png"},
           {name: "Claudia Pastor", bio: "Bio Claudia Pastor", img: "ClaudiaPastor.png"},
           {name: "Loida Heras", bio: "Bio Loida Heras", img: "LoidaHeras.png"}
@@ -88,10 +88,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-html, .containerTeacher {
-    max-width: 100%;
-    overflow-x: hidden;
-}
 .teachersContainer{
   padding: 0 65px 0 40px;
 }
