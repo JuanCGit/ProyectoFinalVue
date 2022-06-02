@@ -4,23 +4,23 @@
       <h1 class="mb-4 display-4">Nosotros</h1>
 
       <div @click="abrirLink('https://github.com/JuanCGit')" class="row row-cols-1 row-cols-md-2 cards">
-        <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png"/></div>
+        <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="@/assets/fotoJuan.png" alt="Juan Casanova Gago"></div>
         <div class="col-xxl-10 d-flex flex-column justify-content-center">
             <h3>Juan Casanova</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur qui fugiat ullam! Perferendis accusantium, aut iste odit nostrum numquam minima error ab non! Omnis, voluptate aperiam ut nulla sed unde!</p>
+            <p>Desde pequeño tengo afán a la informática y todo lo que envuelve el tema. Conrespecto a mi motivación personal, la curiosidad y el deseo constante de aprender cosas nuevas me impulsan a desarrollarme constantemente.</p>
         </div>
       </div>
 
       <div @click="abrirLink('https://github.com/LucasEG1')" class="row row-cols-1 row-cols-md-2 cards">
-        <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png"/></div>
+        <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="@/assets/fotoLucas.png" alt="Lucas Ezequiel Gyori"></div>
         <div class="col-xxl-10 d-flex flex-column justify-content-center">
             <h3>Lucas Gyori</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Tras mucho tiempo sin qué quería hacer en mi vida, decidí estudiar lo que más me gusta: programación. Gracias a esta decisión me dedico a algo útil, interesante y que me permite tener tiempo libre para desconectar.</p>
         </div>
       </div>
 
       <div @click="abrirLink('https://github.com/')" class="row row-cols-1 row-cols-md-2 cards">
-        <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png"/></div>
+        <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png" alt="Rubén Pérez Castelló"></div>
         <div class="col-xxl-10 d-flex flex-column justify-content-center">
             <h3>Rubén Pérez Castelló</h3>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas sequi minus minima dolore eaque quibusdam! Nisi placeat accusamus omnis ea asperiores sunt similique, vero in tenetur sed quos quis dolorem!</p>
@@ -28,7 +28,7 @@
       </div>
 
       <div @click="abrirLink('https://github.com/')" class="row row-cols-1 row-cols-md-2 cards">
-        <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png"/></div>
+        <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png" alt="Luis Pérez Hurtado"></div>
         <div class="col-xxl-10 d-flex flex-column justify-content-center">
             <h3>Luis Perez Hurtado</h3>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae repellendus tempore alias? Minima ullam omnis repellat voluptates perspiciatis explicabo, repellendus unde non laudantium, culpa, illum odio modi ut atque et!</p>
