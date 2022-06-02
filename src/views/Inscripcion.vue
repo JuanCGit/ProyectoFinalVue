@@ -28,14 +28,14 @@
 
                         <div class="row">
 
-                            <div class="col-md-4 col-lg-4 form-floating mb-3 mt-4">
+                            <div class="col-md-4 col-lg-4 col-xl-4 form-floating mb-3 mt-4">
                                 <!-- DNI -->
                                 <input v-model="dni" type="text" class="form-control form-control-sm border-0 border-start border-bottom border-2"
                                     id="dni" placeholder="Escribe tu dni" name="dni" maxlength="9" required>
                                 <label for="dni" class="ms-3">Dni</label>
                             </div>
 
-                            <div class="col-md-8 col-lg-4 form-floating ps-3">  
+                            <div class="col-md-8 col-lg-8 col-xl-4 form-floating ps-3">  
                                 <!-- Fecha Nacimiento -->
                                 <div class="row">
                                     <span class="ms-3 g-0">Fecha Nacimiento</span>
@@ -177,26 +177,26 @@
                                 </div>
                             </div>
 
-                            <div class="col-lg-4 form-floating">
+                            <div class="col-lg-4 col-xl-4 form-floating">
                             
                                 <!-- Div Género -->
                                 <div class="row">
                                     <span class="mb-3">Sexo</span>
 
-                                    <div class="col-4 form-floating mb-2">
+                                    <div class="col-sm-4 mb-2 form-floating">
                                         <button type="button" class="btn btn-outline-secondary ms-1 border-0 border-start border-bottom border-2 hombre"
                                             id="hombre">Hombre
                                         </button>
                                     </div>
 
-                                    <div class="col-4 form-floating">
+                                    <div class="col-sm-4 mb-2 form-floating">
                                         <button type="button"
                                             class="btn btn-outline-secondary ms-1 border-0 border-start border-bottom border-2"
                                             id="mujer">Mujer
                                         </button>
                                     </div>
 
-                                    <div class="col-4 form-floating">
+                                    <div class="col-sm-4 mb-2 form-floating">
                                         <button type="button"
                                             class="btn btn-outline-secondary ms-1 border-0 border-start border-bottom border-2"
                                             id="otros">Otros
@@ -209,7 +209,7 @@
                     </fieldset>
 
                     <!-- DATOS CONTACTO -->
-                    <fieldset class="border-top border-bottom border-danger px-3">  
+                    <fieldset class="border-top border-bottom border-danger border-2 px-3">  
                         <legend class="mt-2">Datos de Contacto</legend>
 
                         <div class="row">
@@ -553,13 +553,17 @@ export default {
   data(){
       return {
           esVisible: true,
+          exprRegMovil: /^[67][0-9]{8}$/,
+          exprRegDni: /^[0-9]{8}[A-Z]$/,
+          exprRegEmail:/^\w+([.-]?\w+)*@(?:|hotmail|outlook|yahoo|live|gmail)\.(?:|com|es)+$/,
           nombre:"",
           apellidos:"",
           dni:"",
           direccion:"",
           correo:"",
           correo2:"",
-          telefono:""
+          telefono:"",
+          esValido:false
       }
   },
   methods: {
@@ -568,19 +572,41 @@ export default {
                 this.popup("Por favor, rellena los datos correspondientes", "error");
             }
             else{
-                if(this.correo==this.correo2){
-                    if(this.telefono.length==9){
-                        this.esVisible=!this.esVisible;
-                        this.popupConfirmacion("¿Estás seguro de querer guardar estos datos?","warning");
+                if( this.validacionDni() ){
+                    if( this.correo==this.correo2 ){
+                        if ( this.validacionEmail() ){
+                            if ( this.validacionMovil() ){
+                                this.esVisible=!this.esVisible;
+                                this.popupConfirmacion("¿Estás seguro de querer guardar estos datos?","warning");
+                            }
+                            else{
+                                this.popup("Número de teléfono no válido","error");
+                            }
+                        }
+                        else{
+                            this.popup("Correo no válido", "error");
+                        }
                     }
                     else{
-                        this.popup("Número de teléfono no válido","error");
+                        this.popup("Los correos no coinciden", "info");
                     }
                 }
                 else{
-                    this.popup("Los correos no coinciden", "info");
+                    this.popup("DNI no válido","error");
                 } 
             }
+        },
+        validacionMovil() {
+            this.esValido = this.exprRegMovil.test(this.telefono);
+            return this.esValido
+        },
+        validacionDni() {
+            this.esValido = this.exprRegDni.test(this.dni);
+            return this.esValido
+        },
+        validacionEmail() {
+            this.esValido = this.exprRegEmail.test(this.correo);
+            return this.esValido
         },
         popup(message, status) {
             Swal.fire({
