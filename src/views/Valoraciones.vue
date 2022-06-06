@@ -14,12 +14,31 @@
 </template>
 
 <script>
+import Valoraciones from '@/components/Valoraciones.vue';
+import PopUp from '@/components/PopUp.vue';
 export default {
+  
   name: "Valoraciones-Vue",
+  data(){
+      return {
+          reseñas : [
+            {user:"User1", comment: "cuerpo1", fecha:"dia actual"},
+            {user:"User2", comment: "cuerpo2", fecha:"dia actual"},
+          ]
+      }
+  },
   methods: {
     abrirLink(url) {
       window.open(url, "_blank");
     },
+    crearValoracion() {
+      const lista = document.querySelector('.listaResenas');
+      
+    },
+    popUpForm(){
+
+    }
+
   },
 };
 </script>
