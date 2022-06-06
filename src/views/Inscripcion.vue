@@ -5,7 +5,7 @@
 
             <form action="formulario.php" method="get" autocomplete="on" class="my-5 mx-5">
 
-                <div v-if="esVisible"><!---->
+                <div ><!--v-if="esVisible"-->
                     <!-- DATOS PERSONALES -->
                     <fieldset class="border-top border-bottom border-danger border-2 px-3">
                     
@@ -277,7 +277,7 @@
 
                 </div>
 
-                <div v-else><!---->
+                <div ><!--v-else-->
                     <!-- CUOTA -->
                     <fieldset class="border-top border-bottom border-danger px-3 cuota" id="cuota">
                         <legend class="mt-2">Seleccione su cuota</legend>
@@ -586,6 +586,12 @@
                         @click="validacionCuentaBanco">Aceptar</button>
                         <button type="reset" class="btn btn-lg btn-outline-secondary">Cancelar</button>
                     </div>
+                    <ul id="list">
+                    <li id="element1">One</li>
+                    <li id="element2">Two</li>
+                    <li id="element3">Three</li>
+                    </ul> 
+                    <button @click="addAnother" class="btn">Añade otro</button>
 
                 </div>
             </form>
@@ -625,6 +631,14 @@ export default {
       }
   },
   methods: {
+      addAnother () {
+    var ul = document.getElementById("list");
+    var li = document.createElement("li");
+    var children = ul.children.length + 1
+    li.setAttribute("id", "element"+children)
+    li.appendChild(document.createTextNode("Element "+children));
+    ul.appendChild(li)
+},
         cuotaSeleccionada(laCuota,cuotaSel,opcion2,opcion3){
             if(laCuota){
                 document.getElementById(cuotaSel).innerHTML = "Cuota seleccionada";    
@@ -720,7 +734,7 @@ export default {
                 this.popup("Por favor, rellena Todos los campos de la CC", "error");
             }
             else{
-                if( !this.valIban() && !this.valEntidad() && !this.valOficina() && !this.valDc() && !this.valNumCuenta() ){
+                if( !this.valIban() || !this.valEntidad() || !this.valOficina() || !this.valDc() || !this.valNumCuenta() ){
                     this.popup("Los datos de cuenta no son válidos", "error")
                 }
             }
