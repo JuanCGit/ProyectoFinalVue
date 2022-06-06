@@ -20,7 +20,7 @@
       </div>
 
       <div @click="abrirLink('https://github.com/RPC26')" class="row row-cols-1 row-cols-md-2 cards">
-        <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png" alt="Rubén Pérez Castelló"></div>
+        <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="@/assets/fotoRuben.png" alt="Rubén Pérez Castelló"></div>
         <div class="col-xxl-10 d-flex flex-column justify-content-center text-lg-start">
             <h3>Rubén Pérez Castelló</h3>
             <p>¡Hola! Soy Rubén y soy estudiante de Desarrollo de aplicaciones web en el Centro Público de Formación Profesional Ausiàs March de Valencia.</p>
@@ -29,7 +29,7 @@
 
       <div @click="abrirLink('https://github.com/lperezhurtado')" class="row row-cols-1 row-cols-md-2 cards">
         <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="@/assets/fotoLuis.png" alt="Luis Pérez Hurtado"></div>
-        <div class="col-xxl-10 d-flex flex-column justify-content-center tezt-lg-start">
+        <div class="col-xxl-10 d-flex flex-column justify-content-center text-lg-start">
             <h3>Luis Perez Hurtado</h3>
             <p>Soy Luis, futuro desarrollador web. Me gusta mucho la programación, una de mis pasiones y pienso dedicarme a ello. Aprender cosas nuevas no es un reto para mí, así que ¡a por todas!</p>
         </div>
