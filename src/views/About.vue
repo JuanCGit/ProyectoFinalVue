@@ -38,8 +38,8 @@
     <!-- N U E S T R O  P R O Y E C T O -->
     <div class="proyecto">
       <h1 class="mb-4 display-4">Nuestro proyecto</h1>
-
-      <div class="row row-cols-1 row-cols-md-2 cards">
+      
+      <div class="row row-cols-1 row-cols-md-2 cards" @click="abrirLink('https://github.com/JuanCGit/ProyectoFinalVue')">
         <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="@/assets/myGym.png"/></div>
         <div class="col-xxl-10 d-flex flex-column justify-content-center">
             <h2 class="mainColor">My Gym</h2>
@@ -112,6 +112,6 @@ export default {
     box-shadow: 0 30px 80px rgba(0,0,0,0), 0 20px 70px rgba(0,0,0,0.12);
     border-radius: 15px;
     margin-bottom: 50px;
-    cursor: pointer;
+    cursor: help;
 }
 </style>
