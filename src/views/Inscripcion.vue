@@ -5,7 +5,7 @@
 
             <form action="formulario.php" method="get" autocomplete="on" class="my-5 mx-5">
 
-                <div v-if="esVisible">
+                <div v-if="esVisible"><!---->
                     <!-- DATOS PERSONALES -->
                     <fieldset class="border-top border-bottom border-danger border-2 px-3">
                     
@@ -28,75 +28,78 @@
 
                         <div class="row">
 
+                            <!-- DNI -->
                             <div class="col-md-4 col-lg-4 col-xl-4 form-floating mb-3 mt-4">
-                                <!-- DNI -->
                                 <input v-model="dni" type="text" class="form-control form-control-sm border-0 border-start border-bottom border-2"
                                     id="dni" placeholder="Escribe tu dni" name="dni" maxlength="9" required>
-                                <label for="dni" class="ms-3">Dni</label>
+                                <label for="dni" class="ms-3">DNI</label>
                             </div>
 
-                            <div class="col-md-8 col-lg-8 col-xl-4 form-floating ps-3">  
-                                <!-- Fecha Nacimiento -->
+                            <!-- Fecha Nacimiento -->
+                            <div class="col-md-8 col-lg-8 col-xl-4 form-floating ps-3">       
                                 <div class="row">
                                     <span class="ms-3 g-0">Fecha Nacimiento</span>
 
                                     <div class="col-sm-3 col-md-4 form-floating mb-2">
-                                        <select class="form-select border-0 border-start border-bottom border-2" id="dia" name="dia">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                            <option>6</option>
-                                            <option>7</option>
-                                            <option>8</option>
-                                            <option>9</option>
-                                            <option>10</option>
-                                            <option>11</option>
-                                            <option>12</option>
-                                            <option>13</option>
-                                            <option>14</option>
-                                            <option>15</option>
-                                            <option>16</option>
-                                            <option>17</option>
-                                            <option>18</option>
-                                            <option>19</option>
-                                            <option>20</option>
-                                            <option>21</option>
-                                            <option>22</option>
-                                            <option>23</option>
-                                            <option>24</option>
-                                            <option>25</option>
-                                            <option>26</option>
-                                            <option>27</option>
-                                            <option>28</option>
-                                            <option>29</option>
-                                            <option>30</option>
-                                            <option>31</option>
+                                        <select v-model="dia" class="form-select border-0 border-start border-bottom border-2" id="dia" name="dia">
+                                            <option disabled value="">D&#237;a</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
+                                            <option value="21">21</option>
+                                            <option value="22">22</option>
+                                            <option value="23">23</option>
+                                            <option value="24">24</option>
+                                            <option value="25">25</option>
+                                            <option value="26">26</option>
+                                            <option value="27">27</option>
+                                            <option value="28">28</option>
+                                            <option value="29">29</option>
+                                            <option value="30">30</option>
+                                            <option value="31">31</option>
                                         </select>
                                         <label for="dia" class="ms-3">Dia</label>
                                     </div>
 
                                     <div class="col-sm-5 col-md-4 form-floating mb-3">
-                                        <select class="form-select border-0 border-start border-bottom border-2" id="mes" name="mes">
-                                            <option>Enero</option>
-                                            <option>Febrero</option>
-                                            <option>Marzo</option>
-                                            <option>Abril</option>
-                                            <option>Mayo</option>
-                                            <option>Junio</option>
-                                            <option>Julio</option>
-                                            <option>Agosto</option>
-                                            <option>Septiembre</option>
-                                            <option>Octubre</option>
-                                            <option>Noviembre</option>
-                                            <option>Diciembre</option>
+                                        <select v-model="mes" class="form-select border-0 border-start border-bottom border-2" id="mes" name="mes">
+                                            <option disabled value="">Mes</option>
+                                            <option value="0">Enero</option>
+                                            <option value="1">Febrero</option>
+                                            <option value="2">Marzo</option>
+                                            <option value="3">Abril</option>
+                                            <option value="4">Mayo</option>
+                                            <option value="5">Junio</option>
+                                            <option value="6">Julio</option>
+                                            <option value="7">Agosto</option>
+                                            <option value="8">Septiembre</option>
+                                            <option value="9">Octubre</option>
+                                            <option value="10">Noviembre</option>
+                                            <option value="11">Diciembre</option>
                                         </select>
                                         <label for="mes" class="ms-3">Mes</label>
                                     </div>
 
                                     <div class="col-sm-4 col-md-4 form-floating mb-3">
-                                        <select class="form-select border-0 border-start border-bottom border-2" id="año" name="año">
+                                        <select v-model="año" class="form-select border-0 border-start border-bottom border-2" id="año" name="año">
+                                            <option disabled value="">A&#241;o</option>
                                             <option value="2022">2022</option>
                                             <option value="2021">2021</option>
                                             <option value="2020">2020</option>
@@ -177,29 +180,36 @@
                                 </div>
                             </div>
 
+                            <!-- Div Género -->
                             <div class="col-lg-4 col-xl-4 form-floating">
-                            
-                                <!-- Div Género -->
+                             
                                 <div class="row">
                                     <span class="mb-3">Sexo</span>
-
+                                    <!--Hombre-->
                                     <div class="col-sm-4 mb-2 form-floating">
-                                        <button type="button" class="btn btn-outline-secondary ms-1 border-0 border-start border-bottom border-2 hombre"
-                                            id="hombre">Hombre
-                                        </button>
+                                        <button type="button" 
+                                            class="btn btn-outline-secondary ms-1 border-0 border-start border-bottom border-2 hombre"
+                                            :class="esHombre ? 'btn-outline-danger border-danger' : ''"
+                                            @click="esHombre=!esHombre, esMujer=false, esOtros=false"
+                                            id="hombre" name="sexo" value="h">Hombre
+                                        </button>    
                                     </div>
-
+                                    <!--Mujer-->
                                     <div class="col-sm-4 mb-2 form-floating">
                                         <button type="button"
-                                            class="btn btn-outline-secondary ms-1 border-0 border-start border-bottom border-2"
-                                            id="mujer">Mujer
+                                            class="btn btn-outline-secondary ms-1 border-0 border-start border-bottom border-2 mujer"
+                                            :class="esMujer ? 'btn-outline-danger border-danger' : ''"
+                                            @click="esMujer=!esMujer, esHombre=false, esOtros=false"
+                                            id="mujer" name="sexo" value="m">Mujer
                                         </button>
                                     </div>
-
+                                    <!--Otros-->
                                     <div class="col-sm-4 mb-2 form-floating">
                                         <button type="button"
-                                            class="btn btn-outline-secondary ms-1 border-0 border-start border-bottom border-2"
-                                            id="otros">Otros
+                                            class="btn btn-outline-secondary ms-1 border-0 border-start border-bottom border-2 otros"
+                                            :class="esOtros ? 'btn-outline-danger border-danger' : ''"
+                                            @click="esOtros=!esOtros, esHombre=false, esMujer=false"
+                                            id="otros" name="sexo" value="o">Otros
                                         </button>
                                     </div>
 
@@ -257,6 +267,7 @@
 
                         </div>
                     </fieldset>
+
                     <!--BOTON PARA SIGUIENTE PARTE DEL FORMULARIO-->
                     <div class="my-3 mx-auto" style="width:118px">
                         <h4 @click="datosRellenados" class="btn btn-lg btn-outline-secondary" id="siguiente">
@@ -266,51 +277,87 @@
 
                 </div>
 
-                <div v-else>
+                <div v-else><!---->
                     <!-- CUOTA -->
                     <fieldset class="border-top border-bottom border-danger px-3 cuota" id="cuota">
                         <legend class="mt-2">Seleccione su cuota</legend>
 
                         <div class="row" id="cuotas">
                         
-                            <!-- 1 MES -->
                             <span class="ms-3 g-0">Cuotas disponibles</span>
-                            
-                            <div class="col-md-4 col-lg-4 container mb-3 mt-3">
+                            <!-- 1 mes -->
+                            <div :class="mesSel ? 'seleccionada' : ''" class="col-md-4 col-lg-4 container mb-3 mt-3">
 
                                 <h2>1 mes</h2>
                     
-                                <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#mes">Ver oferta</button>
+                                <button type="button" :class="mesSel ? 'seleccionada' : ''" class="btn btn-secondary" id="oferta1" data-bs-toggle="collapse" data-bs-target="#mes">Ver oferta</button>
                                 <div id="mes" class="collapse" data-bs-parent="#cuotas">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    Precio de un mes
+                                    <div id="precio">20,90 €</div>
+                                    <div class="text-center">
+                                        <dl>
+                                            <dd>Pulsera incluida</dd>
+                                            <dd>Acceso completo al centro</dd>
+                                            <dd>Actividades dirigidas incluidas</dd>
+                                        </dl>
+                                    </div>
+                                    <button type="button" 
+                                            class="float-end btn btn-outline-secondary border-0 border-start border-bottom"
+                                            :class="mesSel ? 'seleccionada' : ''"
+                                            @click="mesSel=!mesSel, seisMesesSel=false, añoSel=false, cuotaSeleccionada(mesSel,'btnMes','btnSeisMeses','btnAño','oferta1')"
+                                            id="btnMes" name="cuota" value="mes">Seleccionar
+                                    </button>
                                 </div>
 
                             </div>
-
-                            <div class="col-md-4 col-lg-4 container mb-3 mt-3">
+                            <!-- 6 meses -->
+                            <div :class="seisMesesSel ? 'seleccionada' : ''" class="col-md-4 col-lg-4 container mb-3 mt-3">
 
                                 <h2>6 meses</h2>
                     
-                                <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#seisMeses">Ver oferta</button>
+                                <button type="button" :class="seisMesesSel ? 'seleccionada' : ''" class="btn btn-secondary" id="oferta2" data-bs-toggle="collapse" data-bs-target="#seisMeses">Ver oferta</button>
                                 <div id="seisMeses" class="collapse" data-bs-parent="#cuotas">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  
+                                    Precio cuota de 6 meses
+                                    <div id="precio">89,90 €</div>
+                                    <div class="text-center">
+                                        <dl>
+                                            <dd>Pulsera + acceso con huella + matrícula incluidos</dd>
+                                            <dd>Acceso completo al centro</dd>
+                                            <dd>Actividades dirigidas incluidas</dd>
+                                        </dl>
+                                    </div>
+                                    <button type="button" 
+                                            class="float-end btn btn-outline-secondary ms-1 border-0 border-start border-bottom border-2 hombre"
+                                            :class="seisMesesSel ? 'seleccionada' : ''"
+                                            @click="seisMesesSel=!seisMesesSel, mesSel=false,añoSel=false, cuotaSeleccionada(seisMesesSel,'btnSeisMeses','btnMes','btnAño')"
+                                            id="btnSeisMeses" name="cuota" value="seisMeses">Seleccionar
+                                    </button>
                                 </div>
 
                             </div>
-
-                            <div class="col-md-4 col-lg-4 container mb-3 mt-3">
+                            <!-- 1 año -->
+                            <div :class="añoSel ? 'seleccionada' : ''" class="col-md-4 col-lg-4 container mb-3 mt-3">
 
                                 <h2>1 año</h2>
                     
-                                <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#año">Ver oferta</button>
+                                <button type="button" :class="añoSel ? 'seleccionada' : ''" class="btn btn-secondary" id="oferta3" data-bs-toggle="collapse" data-bs-target="#año">Ver oferta</button>
                                 <div id="año" class="collapse" data-bs-parent="#cuotas">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    Precio cuota de 1 año
+                                    <div id="precio">114,90 €</div>
+                                    <div class="text-center">
+                                        <dl>
+                                            <dd><b>2 meses de regalo</b></dd>
+                                            <dd>Pulsera + acceso con huella + matrícula incluidos</dd>
+                                            <dd>Acceso completo al centro</dd>
+                                            <dd>Actividades dirigidas incluidas</dd>
+                                        </dl>
+                                    </div>
+                                    <button type="button" 
+                                            class="float-end btn btn-outline-secondary ms-1 border-0 border-start border-bottom border-2 hombre"
+                                            :class="añoSel ? 'seleccionada' : ''"
+                                            @click="añoSel=!añoSel, mesSel=false,seisMesesSel=false, cuotaSeleccionada(añoSel,'btnAño','btnSeisMeses','btnMes')"
+                                            id="btnAño" name="cuota" value="año">Seleccionar
+                                    </button>
                                 </div>
 
                             </div>
@@ -328,31 +375,31 @@
                             <span class="ms-3 g-0">Cuenta Bancaria</span>
 
                             <div class="col-sm-4 col-md-2 form-floating mb-3 mt-3">
-                                <input type="text" class="form-control form-control-sm border-0 border-start border-bottom border-2"
+                                <input v-model="iban" type="text" class="form-control form-control-sm border-0 border-start border-bottom border-2"
                                     id="iban" placeholder="iban" name="iban" maxlength="4" required>
                                 <label for="iban" class="ms-3">IBAN</label>
                             </div>
 
                             <div class="col-sm-4 col-md-2 form-floating mt-3 mb-3">
-                                <input type="text" class="form-control border-0 border-start border-bottom border-2" id="entidad"
+                                <input v-model="entidad" type="text" class="form-control border-0 border-start border-bottom border-2" id="entidad"
                                     placeholder="entidad" name="entidad" maxlength="4" required>
                                 <label for="entidad" class="ms-3">Entidad</label>
                             </div>
 
                             <div class="col-sm-4 col-md-2 form-floating mb-3 mt-3">
-                                <input type="text" class="form-control form-control-sm border-0 border-start border-bottom border-2"
+                                <input v-model="oficina" type="text" class="form-control form-control-sm border-0 border-start border-bottom border-2"
                                     id="oficina" placeholder="oficina" name="oficina" maxlength="4" required>
                                 <label for="oficina" class="ms-3">Oficina</label>
                             </div>
 
                             <div class="col-sm-2 col-md-2 form-floating mt-3 mb-3">
-                                <input type="text" class="form-control border-0 border-start border-bottom border-2" id="dc"
+                                <input v-model="dc" type="text" class="form-control border-0 border-start border-bottom border-2" id="dc"
                                     placeholder="dc" name="dc" maxlength="2" required>
                                 <label for="dc" class="ms-3">DC</label>
                             </div>
 
                             <div class="col-sm-10 col-md-4 form-floating mt-3 mb-3">
-                                <input type="text" class="form-control border-0 border-start border-bottom border-2" id="cuenta"
+                                <input v-model="numCuenta" type="text" class="form-control border-0 border-start border-bottom border-2" id="cuenta"
                                     placeholder="Verifica tu correo" name="cuenta" maxlength="10" required>
                                 <label for="cuenta" class="ms-3">Número de cuenta</label>
                             </div>
@@ -535,7 +582,8 @@
 
                     <!-- BOTONES DE ACEPTAR Y CANCELAR -->
                     <div class="mx-auto mt-5" id="botones">
-                        <button type="submit" class="btn btn-lg btn-outline-success">Aceptar</button>
+                        <button type="submit" class="btn btn-lg btn-outline-success"
+                        @click="validacionCuentaBanco">Aceptar</button>
                         <button type="reset" class="btn btn-lg btn-outline-secondary">Cancelar</button>
                     </div>
 
@@ -543,6 +591,7 @@
             </form>
         </div>
     </div>
+ 
 </template>
 
 <script>
@@ -552,64 +601,149 @@ export default {
   name: 'Inscripcion-Vue',
   data(){
       return {
-          esVisible: true,
           exprRegMovil: /^[67][0-9]{8}$/,
-          exprRegDni: /^[0-9]{8}[A-Z]$/,
+          exprRegDCuenta: /^[0-9]{4}$/,
+          exprRegDc: /^[0-9]{2}$/,
+          exprRegNCuenta: /^[0-9]{10}$/,
+          exprRegDni: /^[0-9]{8}[A-Za-z]$/,
           exprRegEmail:/^\w+([.-]?\w+)*@(?:|hotmail|outlook|yahoo|live|gmail)\.(?:|com|es)+$/,
           nombre:"",
           apellidos:"",
           dni:"",
+          dia:"", mes:"", año:"", //FECHA NACIMIENTO
+          fechaNac: '"'+this.año/this.mes/this.dia+'"', //FORMATO FECHA
           direccion:"",
           correo:"",
           correo2:"",
           telefono:"",
-          esValido:false
+          iban:"", entidad:"", oficina:"", dc:"", numCuenta:"", //CAMPOS DE NUM DE CUENTA
+          esVisible: true, //CAMBIA DE 1º A 2º PARTE DE FORM
+          esValido:false, 
+          esHombre:false, esMujer:false, esOtros:false, //GENERO
+          mesSel:false, seisMesesSel:false, añoSel:false //CUOTAS
+          
       }
   },
   methods: {
+        cuotaSeleccionada(laCuota,cuotaSel,opcion2,opcion3){
+            if(laCuota){
+                document.getElementById(cuotaSel).innerHTML = "Cuota seleccionada";    
+                document.getElementById(opcion2).innerHTML = "Seleccionar";
+                document.getElementById(opcion3).innerHTML = "Seleccionar";
+            }
+            else{
+                document.getElementById(cuotaSel).innerHTML = "Seleccionar";
+            }        
+        },
+        
         datosRellenados() {
-            if(!this.nombre || !this.apellidos || !this.dni || !this.direccion || !this.correo || !this.correo2 || !this.telefono){
+            if(!this.nombre || !this.apellidos || !this.dni || !this.direccion || !this.correo || !this.correo2 || !this.telefono || !this.dia || !this.mes || !this.año ){
                 this.popup("Por favor, rellena los datos correspondientes", "error");
             }
             else{
                 if( this.validacionDni() ){
-                    if( this.correo==this.correo2 ){
-                        if ( this.validacionEmail() ){
-                            if ( this.validacionMovil() ){
-                                this.esVisible=!this.esVisible;
-                                this.popupConfirmacion("¿Estás seguro de querer guardar estos datos?","warning");
+                    if( this.esMayorEdad() ){
+                        if( this.correosIguales() ){
+                            if ( this.validacionEmail() ){
+                                if ( this.validacionMovil() ){
+                                    this.esVisible=!this.esVisible;
+                                    this.popupConfirmacion("¿Estás seguro de querer guardar estos datos?","warning");
+                                }
+                                else{
+                                    this.popup("Número de teléfono no válido","error");
+                                }
                             }
                             else{
-                                this.popup("Número de teléfono no válido","error");
+                                this.popup("Correo no válido", "error");
                             }
                         }
                         else{
-                            this.popup("Correo no válido", "error");
+                            this.popup("Los correos no coinciden", "info");
                         }
                     }
                     else{
-                        this.popup("Los correos no coinciden", "info");
-                    }
+                        this.popup("La edad introducida es de un menor de edad","warning")
+                    }    
                 }
                 else{
                     this.popup("DNI no válido","error");
                 } 
             }
         },
+
+        calcularEdad(dia,mes,año) {
+            var fechaActual = new Date();
+            var fechaNac = new Date(año,mes,dia);
+            var edad = fechaActual.getFullYear() - fechaNac.getFullYear();
+            var mesNac = fechaActual.getMonth() - fechaNac.getMonth();
+            if (mesNac < 0 || (mesNac === 0 && fechaActual.getDate() < fechaNac.getDate())) {
+                edad--;
+            }
+            return edad;
+        },
+
+        esMayorEdad(){
+            if ( this.calcularEdad(this.dia,this.mes,this.año) >= 18 ){
+                return true
+            }
+            else{
+                return false
+            }
+        },
+
         validacionMovil() {
             this.esValido = this.exprRegMovil.test(this.telefono);
             return this.esValido
         },
+
         validacionDni() {
             this.esValido = this.exprRegDni.test(this.dni);
             return this.esValido
         },
+
         validacionEmail() {
             this.esValido = this.exprRegEmail.test(this.correo);
             return this.esValido
         },
+
+        correosIguales() {
+            if(this.correo == this.correo2){
+                return true
+            }
+            else{
+                return false
+            }
+        },
+        
+        validacionCuentaBanco(){
+            if(!this.iban || !this.entidad || !this.oficina || !this.dc || !this.numCuenta){
+                this.popup("Por favor, rellena Todos los campos de la CC", "error");
+            }
+            else{
+                if( !this.valIban() && !this.valEntidad() && !this.valOficina() && !this.valDc() && !this.valNumCuenta() ){
+                    this.popup("Los datos de cuenta no son válidos", "error")
+                }
+            }
+        },
+        valIban(){
+            return this.exprRegDCuenta.test(this.iban)
+        },
+        valEntidad(){
+            return this.exprRegDCuenta.test(this.entidad)
+        },
+        valOficina(){
+            return this.exprRegDCuenta.test(this.oficina)
+        },
+        valDc(){
+            return this.exprRegDc.test(this.dc)
+        },
+        valNumCuenta(){
+            return this.exprRegNCuenta.test(this.numCuenta)
+        },
+        
         popup(message, status) {
             Swal.fire({
+
                 customClass : {
                     title: 'swal2-title',
                     cancelButton: 'swal2-cancel',
@@ -641,7 +775,6 @@ export default {
                     'Datos guardados correctamente.',
                     '',
                     'success'
-
                     )
                 }
                 else {
@@ -654,28 +787,47 @@ export default {
 </script>
 
 <style scoped>
+.seleccionada{
+    background-color: rgb(238, 82, 71);
+    color: white;
+    border-radius: 15px;
+}
+
+#precio{
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+}
+#oferta1, #oferta2, #oferta3{
+    border-radius: 15px;
+}
+
+#oferta1:hover, #oferta2:hover, #oferta3:hover, #siguiente:hover{
+    background-color: red;
+    border-color: red;
+}
+form button:active{
+    border-color: red;
+}
 #principal{
     /*background-image: url(../imgs/bici.jpg);*/
     text-align: left; 
 }
-
 #cuerpo{
     background-color: white;
 }
-
 input[type=text], input[type=tel], input[type=email], #dia, #mes, #año{
     border-radius: 0px 15px;
 }
-
-fieldset{
+fieldset, #siguiente{
     border-radius: 25px;
 }
-
 #botones{
     text-align: center;
 }
-
-#hombre, #mujer, #otros{
+#hombre, #mujer, #otros {
     height: 40px;
     border-radius: 15px;
     width: 90px;
