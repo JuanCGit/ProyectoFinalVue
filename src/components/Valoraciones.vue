@@ -1,16 +1,18 @@
 <template>
-    <div class="teacher" @click="clicked='true'">
+    <div class="valoracion">
         <div class="d-flex flex-column justify-content-center align-items-center">
-            <img :src="getImgUrl(img)">  
-            <h1 class="mt-4">{{user}}</h1>
+            
+            <h1 class="mt-4">@{{user}} - {{puntuacion}}/10</h1>
             <p>{{truncate(comment)}}</p>
+            <p class="small">{{fecha}}</p>
+
         </div>
         <PopUp @hidePopUp="clicked = $event" v-if="clicked=='true'" :user="user" :comment="comment" :fecha="fecha"/>
     </div>
 </template>
 
 <script>
-
+import PopUp from '@/components/PopUp.vue'
 
 export default {
     name: "Valoraciones-Vue",
@@ -22,7 +24,8 @@ export default {
     props: {
         user: String,
         comment: String,
-        fecha: String
+        fecha: String,
+        puntuacion: Number
     },
     methods : {
         truncate(input) {
