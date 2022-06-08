@@ -1,15 +1,22 @@
 <template>
   <div class="container mt-5">
+    <div class="form-switch float-end text-success" @click="esAdmin=!esAdmin">
+      <input type="checkbox" class="form-check-input"> Modo ADMIN
+    </div>
+    <br>
     <ul class="listaResenas">
       <!-- Bucle que recorre el array de reseñas, si hay elementos nuevos, los muestra -->
       <div v-for="valoracion in reseñas" v-bind:key="valoracion.index" class="col">
         <li class="cards">
           <Valoraciones :usuario="valoracion.usuario" :puntuacion="valoracion.puntos" :comentario="valoracion.comentario" :fecha="valoracion.fecha" :ID="valoracion.ID" /> 
-          <button class="btn btn-outline-info" @click="editarValoracion(valoracion.ID)">Editar</button>
-          <button class="btn btn-outline-danger" @click="eliminarValoracion(valoracion.ID)">Eliminar</button>
+          <div v-if="esAdmin">
+            <button class="btn btn-outline-info" @click="editarValoracion(valoracion.ID)">Editar</button>
+            <button class="btn btn-outline-danger" @click="eliminarValoracion(valoracion.ID)">Eliminar</button>
+          </div>
         </li>
       </div>
     </ul>
+    
     <button id="btnForm" class="btn btn-outline-danger border-0 border-3 border-start border-bottom m-3 border-danger mb-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#form">
       ¡Cuéntanos tu experiencia!
     </button>
@@ -42,6 +49,7 @@
   name: "Valoraciones-Vue",
   data(){
       return {
+        esAdmin:false,
         idActual: 3,
         reseñas : [
           {ID:0, usuario:"Esteban Quito",puntos:10, comentario: "Excelente trato con el cliente, recomendable 10/10", fecha:"15/3/2022 13:45"},
