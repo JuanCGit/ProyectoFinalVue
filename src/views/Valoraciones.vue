@@ -19,9 +19,9 @@
             <label for="nombre">Usuario</label>
             <input id="nombre" v-model="usuario" type="text" class="form-control" required>
           </div>
-          
           <textarea  v-model="comentario" class="form-control mb-3" name="comentario" id="comment" cols="15" rows="3" placeholder="Tu comentario aquí..."></textarea>
           ☹️<input v-model="puntuacion" type="range" min="0" max="10">😁
+          
         </fieldset>
         <div>
           <button type="button" @click="crearValoracion" class="btn btn-outline-secondary" data-bs-dismiss="offcanvas">Añadir</button>
@@ -47,7 +47,7 @@
         usuario:"",
         puntuacion: 5,
         comentario:"",
-        fecha:""          
+        fecha:"",        
       }
     },
     components: {
@@ -98,16 +98,16 @@
     transform-origin: left;
     transition: transform .25s;
   }
-  #nombre{
+  #nombre, textarea{
     padding: 10px;
     border: none;
     border-radius: 5px;
     background-color: transparent;
-    outline: 2px solid;
+    outline: 2px solid rgb(147, 70, 70);
   }
-  .inputs:focus-within label {
+  
+  form:focus-within label, form input:valid + .label {
     transform: translate(0, -30px) scale(.8);
-
   }
   #btnForm{
     border-radius: 15px;
