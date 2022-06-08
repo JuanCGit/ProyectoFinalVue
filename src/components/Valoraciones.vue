@@ -1,18 +1,16 @@
 <template>
     <div class="valoracion">
-        <div class="d-flex flex-column justify-content-center align-items-center">
+        <div class="d-flex flex-column justify-content-center align-items-md-start">
             
             <h1 class="mt-4">@{{user}} - {{puntuacion}}/10</h1>
-            <p>{{truncate(comment)}}</p>
+            <p id="comentario">"{{truncate(comment)}}"</p>
             <p class="small">{{fecha}}</p>
 
         </div>
-        <PopUp @hidePopUp="clicked = $event" v-if="clicked=='true'" :user="user" :comment="comment" :fecha="fecha"/>
     </div>
 </template>
 
 <script>
-import PopUp from '@/components/PopUp.vue'
 
 export default {
     name: "Valoraciones-Vue",
@@ -40,10 +38,14 @@ export default {
         }
     },
     components : {
-        PopUp
+       
     }
 }
 </script>
 
 <style scoped>
+#comentario {
+    font-style: italic;
+    text-overflow: clip;
+}
 </style>
