@@ -3,9 +3,9 @@
 
         <div class="well mb-4 text-muted border shadow" id="cuerpo">
 
-            <form action="formulario.php" method="get" autocomplete="on" class="my-5 mx-5">
+            <form action="tratamientodeDatos.php" method="get" autocomplete="on" class="my-5 mx-5">
 
-                <div ><!--v-if="esVisible"-->
+                <div v-if="esVisible"><!---->
                     <!-- DATOS PERSONALES -->
                     <fieldset class="border-top border-bottom border-danger border-2 px-3">
                     
@@ -176,10 +176,8 @@
                                         </select>
                                         <label for="año" class="ms-3">Año</label>
                                     </div>
-
                                 </div>
                             </div>
-
                             <!-- Div Género -->
                             <div class="col-lg-4 col-xl-4 form-floating">
                              
@@ -212,7 +210,6 @@
                                             id="otros" name="sexo" value="o">Otros
                                         </button>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -223,14 +220,13 @@
                         <legend class="mt-2">Datos de Contacto</legend>
 
                         <div class="row">
-
                             <!-- Direccion -->
                             <div class="col-8 form-floating mb-3 mt-3">
                                 <input v-model="direccion" type="text" class="form-control form-control-sm border-0 border-start border-bottom border-2"
                                     id="direccion" placeholder="Escribe tu direccion" name="direccion">
                                 <label for="direccion" class="ms-3">Dirección</label>
                             </div>
-
+                            <!-- Codigo postal -->
                             <div class="col-4 form-floating mt-3 mb-3">
                                 <input type="text" class="form-control border-0 border-start border-bottom border-2" id="cp"
                                     placeholder="Escribe tu codigo postal" name="codPostal" value="46007" maxlength="5">
@@ -247,7 +243,7 @@
                                     id="correo" placeholder="Escribe tu correo" name="correo">
                                 <label for="correo" class="ms-3">Correo</label>
                             </div>
-
+                            <!--Correo 2-->
                             <div class="col-md-6 form-floating mt-3 mb-3">
                                 <input v-model="correo2" type="email" class="form-control border-0 border-start border-bottom border-2" id="correo2"
                                     placeholder="Verifica tu correo" name="correo2">
@@ -261,7 +257,7 @@
                             <!-- Telefono -->
                             <div class="col-sm-5 form-floating mb-3 mt-3">
                                 <input v-model="telefono" type="tel" class="form-control form-control-sm border-0 border-start border-bottom border-2"
-                                    id="movil" placeholder="Escribe tu telefono" name="movil" maxlength="13">
+                                    id="movil" placeholder="Escribe tu telefono" name="movil" maxlength="9">
                                 <label for="movil" class="ms-3">Teléfono móvil</label>
                             </div>
 
@@ -277,7 +273,7 @@
 
                 </div>
 
-                <div ><!--v-else-->
+                <div v-else><!---->
                     <!-- CUOTA -->
                     <fieldset class="border-top border-bottom border-danger px-3 cuota" id="cuota">
                         <legend class="mt-2">Seleccione su cuota</legend>
@@ -586,12 +582,6 @@
                         @click="validacionCuentaBanco">Aceptar</button>
                         <button type="reset" class="btn btn-lg btn-outline-secondary">Cancelar</button>
                     </div>
-                    <ul id="list">
-                    <li id="element1">One</li>
-                    <li id="element2">Two</li>
-                    <li id="element3">Three</li>
-                    </ul> 
-                    <button @click="addAnother" class="btn">Añade otro</button>
 
                 </div>
             </form>
@@ -631,14 +621,6 @@ export default {
       }
   },
   methods: {
-      addAnother () {
-    var ul = document.getElementById("list");
-    var li = document.createElement("li");
-    var children = ul.children.length + 1
-    li.setAttribute("id", "element"+children)
-    li.appendChild(document.createTextNode("Element "+children));
-    ul.appendChild(li)
-},
         cuotaSeleccionada(laCuota,cuotaSel,opcion2,opcion3){
             if(laCuota){
                 document.getElementById(cuotaSel).innerHTML = "Cuota seleccionada";    
@@ -731,7 +713,7 @@ export default {
         
         validacionCuentaBanco(){
             if(!this.iban || !this.entidad || !this.oficina || !this.dc || !this.numCuenta){
-                this.popup("Por favor, rellena Todos los campos de la CC", "error");
+                this.popup("Por favor, completa los campos restantes", "error");
             }
             else{
                 if( !this.valIban() || !this.valEntidad() || !this.valOficina() || !this.valDc() || !this.valNumCuenta() ){
