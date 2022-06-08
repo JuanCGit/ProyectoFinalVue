@@ -4,8 +4,10 @@
       <!-- Bucle que recorre el array de reseñas, si hay elementos nuevos, los muestra -->
       <div v-for="valoracion in reseñas" v-bind:key="valoracion.index" class="col">
         <li class="cards">
-          <Valoraciones :user="valoracion.user" :puntuacion="valoracion.puntos" :comment="valoracion.comment" :fecha="valoracion.fecha"/> 
-        </li> 
+          <Valoraciones :usuario="valoracion.usuario" :puntuacion="valoracion.puntos" :comentario="valoracion.comentario" :fecha="valoracion.fecha" :ID="valoracion.ID" /> 
+          <button class="btn btn-outline-info" @click="editarValoracion(valoracion.ID)">Editar</button>
+          <button class="btn btn-outline-danger" @click="eliminarValoracion(valoracion.ID)">Eliminar</button>
+        </li>
       </div>
     </ul>
     <button id="btnForm" class="btn btn-outline-danger border-0 border-3 border-start border-bottom m-3 border-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#form">
@@ -19,7 +21,7 @@
             <label for="nombre">Usuario</label>
             <input id="nombre" v-model="usuario" type="text" class="form-control" required>
           </div>
-          <textarea  v-model="comentario" class="form-control mb-3" name="comentario" id="comment" cols="15" rows="3" placeholder="Tu comentario aquí..."></textarea>
+          <textarea  v-model="comentario" class="form-control mb-3" name="comentario" id="comentario" cols="15" rows="3" placeholder="Tu comentario aquí..."></textarea>
           ☹️<input v-model="puntuacion" type="range" min="0" max="10">😁
           
         </fieldset>
@@ -39,15 +41,17 @@
   name: "Valoraciones-Vue",
   data(){
       return {
+        idActual: 3,
         reseñas : [
-          {user:"Esteban Quito",puntos:10, comment: "Excelente trato con el cliente, recomendable 10/10", fecha:"15/3/2022 13:45"},
-          {user:"Elsa Naoria", puntos:9, comment: "Personal muy profesional, disponibilidad completa y muy buen clima", fecha:"21/4/2022 19:23"},
-          {user:"Armando Bronca", puntos:2, comment: "Tardaron mucho en atenderme, los aseos no tenían jabón y el agua sale muy fría", fecha:"17/05/2022 12:31"},
+          {ID:0, usuario:"Esteban Quito",puntos:10, comentario: "Excelente trato con el cliente, recomendable 10/10", fecha:"15/3/2022 13:45"},
+          {ID:1, usuario:"Elsa Naoria", puntos:9, comentario: "Personal muy profesional, disponibilidad completa y muy buen clima", fecha:"21/4/2022 19:23"},
+          {ID:2, usuario:"Armando Bronca", puntos:2, comentario: "Tardaron mucho en atenderme, los aseos no tenían jabón y el agua sale muy fría", fecha:"17/05/2022 12:31"},
         ],
         usuario:"",
         puntuacion: 5,
         comentario:"",
-        fecha:"",        
+        fecha:"",
+        ID: this.idActual
       }
     },
     components: {
@@ -61,14 +65,25 @@
         const lista = this.reseñas;
         let dia = new Date();
         let newComment = {
-          user: this.usuario,
-          comment:this.comentario,
+          usuario: this.usuario,
+          comentario:this.comentario,
           fecha: dia.getDate() + "/" + (dia.getMonth()+1) + "/" + dia.getFullYear() + " " + dia.getHours() + ":" + dia.getMinutes(),
-          puntos: this.puntuacion.valueOf()
+          puntos: this.puntuacion.valueOf(),
+          ID: this.idActual
         };
-        if (newComment.user == "") { newComment.user = "Anónimo"; }
-        if (newComment.comment == "") { newComment.comment = "[Sin comentario]"; }
+        if (newComment.usuario == "") { newComment.usuario = "Anónimo"; }
+        if (newComment.comentario == "") { newComment.comentario = "[Sin comentario]"; }
         lista.push(newComment);
+        this.idActual++;
+      },
+      editarValoracion(id) {
+        let reseña = this.reseñas[id];
+        let nuevoComentario = prompt("Introduzca el nuevo comentario");
+        reseña.comentario = nuevoComentario;
+        alert("Comentario editado con éxito");
+      },
+      eliminarValoracion(id) {
+        this.reseñas.splice(id,1);
       }
     },
   };

@@ -2,9 +2,9 @@
     <div class="valoracion">
         <div class="d-flex flex-column justify-content-center align-items-md-start">
             
-            <h1 class="mt-4">@{{user}} - {{puntuacion}}/10</h1>
-            <p id="comentario">"{{truncate(comment)}}"</p>
-            <p class="small">{{fecha}}</p>
+            <h1 class="mt-4">@{{usuario}} - {{puntuacion}}/10</h1>
+            <p id="comentario">"{{truncate(comentario)}}"</p>
+            <p class="small">{{fecha}} -- ID: {{ID}}</p>
 
         </div>
     </div>
@@ -20,10 +20,11 @@ export default {
         }
     },
     props: {
-        user: String,
-        comment: String,
+        usuario: String,
+        comentario: String,
         fecha: String,
-        puntuacion: Number
+        puntuacion: Number,
+        ID: Number
     },
     methods : {
         truncate(input) {
