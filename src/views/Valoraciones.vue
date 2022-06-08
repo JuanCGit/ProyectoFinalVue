@@ -10,7 +10,7 @@
         </li>
       </div>
     </ul>
-    <button id="btnForm" class="btn btn-outline-danger border-0 border-3 border-start border-bottom m-3 border-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#form">
+    <button id="btnForm" class="btn btn-outline-danger border-0 border-3 border-start border-bottom m-3 border-danger mb-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#form">
       ¡Cuéntanos tu experiencia!
     </button>
     <div class="offcanvas offcanvas-end" id="form">
@@ -36,6 +36,7 @@
 
 <script>
   import Valoraciones from '@/components/Valoraciones.vue';
+  import Swal from 'sweetalert2';
   export default {
     
   name: "Valoraciones-Vue",
@@ -80,11 +81,33 @@
         let reseña = this.reseñas[id];
         let nuevoComentario = prompt("Introduzca el nuevo comentario");
         reseña.comentario = nuevoComentario;
-        alert("Comentario editado con éxito");
+        this.popup("Comentario editado con éxito","info"); 
       },
       eliminarValoracion(id) {
         this.reseñas.splice(id,1);
-      }
+        for (let i = id; i < this.reseñas.length; i++) {
+          this.reseñas[i].ID=i
+        }
+
+        this.popup("Comentario eliminado con éxito","success")
+      },
+      popup(message, status) {
+            Swal.fire({
+                customClass : {
+                    title: 'swal2-title',
+                    cancelButton: 'swal2-cancel',
+                    confirmButton: 'swal2-confirm',
+                    input: 'swal2-input'
+                },
+                icon: status,
+                title: message,
+                toast: true,
+                position: 'bottom-end',
+                showConfirmButton: false,
+                timer: 2000,
+                timerProgressBar: true
+            })
+        }
     },
   };
 </script>
