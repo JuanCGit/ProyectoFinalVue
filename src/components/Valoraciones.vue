@@ -4,7 +4,7 @@
             
             <h1 class="mt-4">@{{usuario}} - {{puntuacion}}/10</h1>
             <p id="comentario">"{{truncate(comentario)}}"</p>
-            <p class="small">{{fecha}} -- ID: {{ID}}</p>
+            <p class="small">{{fecha}}</p>
 
         </div>
     </div>
