@@ -1,14 +1,14 @@
 <template>
   <div class="container mt-5">
-    <div class="form-switch float-end text-success" @click="esAdmin=!esAdmin">
-      <input type="checkbox" class="form-check-input"> Modo ADMIN
+    <div class="form-switch float-end text-success" >
+      <input type="checkbox" class="form-check-input" @click="esAdmin=!esAdmin"> Modo ADMIN
     </div>
     <br>
     <ul class="listaResenas">
       <!-- Bucle que recorre el array de reseñas, si hay elementos nuevos, los muestra -->
-      <div v-for="valoracion in reseñas" v-bind:key="valoracion.index" class="col">
+      <div v-for="valoracion in valoraciones" v-bind:key="valoracion.index" class="col">
         <li class="cards">
-          <Valoraciones :usuario="valoracion.usuario" :puntuacion="valoracion.puntos" :comentario="valoracion.comentario" :fecha="valoracion.fecha" :ID="valoracion.ID" /> 
+          <Valoracion :usuario="valoracion.usuario" :puntuacion="valoracion.puntos" :comentario="valoracion.comentario" :fecha="valoracion.fecha" :ID="valoracion.ID" /> 
           <div v-if="esAdmin">
             <button class="btn btn-outline-info" @click="editarValoracion(valoracion.ID)">Editar</button>
             <button class="btn btn-outline-danger" @click="eliminarValoracion(valoracion.ID)">Eliminar</button>
@@ -42,7 +42,7 @@
 </template>
 
 <script>
-  import Valoraciones from '@/components/Valoraciones.vue';
+  import Valoracion from '@/components/Valoracion.vue';
   import Swal from 'sweetalert2';
   export default {
     
@@ -51,7 +51,7 @@
       return {
         esAdmin:false,
         idActual: 3,
-        reseñas : [
+        valoraciones : [
           {ID:0, usuario:"Esteban Quito",puntos:10, comentario: "Excelente trato con el cliente, recomendable 10/10", fecha:"15/3/2022 13:45"},
           {ID:1, usuario:"Elsa Naoria", puntos:9, comentario: "Personal muy profesional, disponibilidad completa y muy buen clima", fecha:"21/4/2022 19:23"},
           {ID:2, usuario:"Armando Bronca", puntos:2, comentario: "Tardaron mucho en atenderme, los aseos no tenían jabón y el agua sale muy fría", fecha:"17/05/2022 12:31"},
@@ -64,39 +64,44 @@
       }
     },
     components: {
-      Valoraciones
+      Valoracion
     },
     methods: {
       abrirLink(url) {
         window.open(url, "_blank");
       },
       crearValoracion() {
-        const lista = this.reseñas;
+        const lista = this.valoraciones;
         let dia = new Date();
-        let newComment = {
+        let newValoracion = {
           usuario: this.usuario,
           comentario:this.comentario,
           fecha: dia.getDate() + "/" + (dia.getMonth()+1) + "/" + dia.getFullYear() + " " + dia.getHours() + ":" + dia.getMinutes(),
           puntos: this.puntuacion.valueOf(),
           ID: this.idActual
         };
-        if (newComment.usuario == "") { newComment.usuario = "Anónimo"; }
-        if (newComment.comentario == "") { newComment.comentario = "[Sin comentario]"; }
-        lista.push(newComment);
+        if (newValoracion.usuario == "") { newValoracion.usuario = "Anónimo"; }
+        if (newValoracion.comentario == "") { newValoracion.comentario = "[Sin comentario]"; }
+        lista.push(newValoracion);
         this.idActual++;
       },
       editarValoracion(id) {
-        let reseña = this.reseñas[id];
-        let nuevoComentario = prompt("Introduzca el nuevo comentario");
-        reseña.comentario = nuevoComentario;
-        this.popup("Comentario editado con éxito","info"); 
+        let valoracion = this.valoraciones[id];
+        let nuevoComentario = prompt("Introduzca el nuevo comentario",valoracion.comentario);
+        
+        if(nuevoComentario==null || nuevoComentario==valoracion.comentario){
+          this.popup("No se han realizado cambios","info");
+        }
+        else{
+          valoracion.comentario = nuevoComentario;
+          this.popup("Cambios realizados con exito","success");
+        }
       },
       eliminarValoracion(id) {
-        this.reseñas.splice(id,1);
-        for (let i = id; i < this.reseñas.length; i++) {
-          this.reseñas[i].ID=i
+        this.valoraciones.splice(id,1);
+        for (let i = id; i < this.valoraciones.length; i++) {
+          this.valoraciones[i].ID=i
         }
-
         this.popup("Comentario eliminado con éxito","success")
       },
       popup(message, status) {

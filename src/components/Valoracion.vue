@@ -13,7 +13,7 @@
 <script>
 
 export default {
-    name: "Valoraciones-Vue",
+    name: "Valoracion-Vue",
     data() {
         return {
             clicked: 'false'
