@@ -1,8 +1,6 @@
-<template>
+<template> <!--HTML REALIZADO POR LUIS PEREZ -->
     <div id="principal" class="containerInscripcion">
-
         <div class="well mb-4 text-muted border shadow" id="cuerpo">
-
             <form action="tratamientodeDatos.php" method="get" autocomplete="on" class="my-5 mx-5">
 
                 <div v-if="esVisible"><!---->
@@ -214,7 +212,6 @@
                             </div>
                         </div>
                     </fieldset>
-
                     <!-- DATOS CONTACTO -->
                     <fieldset class="border-top border-bottom border-danger border-2 px-3">  
                         <legend class="mt-2">Datos de Contacto</legend>
@@ -263,7 +260,6 @@
 
                         </div>
                     </fieldset>
-
                     <!--BOTON PARA SIGUIENTE PARTE DEL FORMULARIO-->
                     <div class="my-3 mx-auto" style="width:118px">
                         <h4 @click="datosRellenados" class="btn btn-lg btn-outline-secondary" id="siguiente">
@@ -300,7 +296,7 @@
                                     <button type="button" 
                                             class="float-end btn btn-outline-secondary border-0 border-start border-bottom"
                                             :class="mesSel ? 'seleccionada' : ''"
-                                            @click="mesSel=!mesSel, seisMesesSel=false, añoSel=false, cuotaSeleccionada(mesSel,'btnMes','btnSeisMeses','btnAño','oferta1')"
+                                            @click="mesSel=!mesSel, seisMesesSel=false, añoSel=false, cuotaSeleccionada(mesSel,'btnMes','btnSeisMeses','btnAño')"
                                             id="btnMes" name="cuota" value="mes">Seleccionar
                                     </button>
                                 </div>
@@ -360,7 +356,6 @@
 
                         </div>
                     </fieldset>
-
                     <!-- DATOS BANCARIOS -->
                     <fieldset class="border-top border-bottom border-danger px-3">    
                         <legend class="mt-2">Datos Bancarios</legend>
@@ -402,7 +397,6 @@
 
                         </div>
                     </fieldset>
-
                     <!-- CUESTIONARIO -->
                     <fieldset class="border-top border-bottom border-danger px-3">
                         <legend class="mt-2">Encuesta (opcional)</legend>
@@ -439,7 +433,6 @@
 
                         </div>
                     </fieldset>
-
                     <!-- TERMINOS Y CONDICIONES -->
                     <fieldset class="border-top border-bottom border-danger mb-3 px-3 pb-3">
                         <legend class="my-2">Términos y Condiciones</legend>
@@ -466,7 +459,7 @@
 
                             <!-- CHECK CONDICIONES -->
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="check1" name="condiciones" value="condiciones" required>
+                                <input v-model="check1" type="checkbox" class="form-check-input" id="check1" name="condiciones" value="condiciones" required>
                                 <label class="form-check-label" for="check1">He leido y acepto las
                                     <a href="#" data-bs-toggle="modal" data-bs-target="#condiciones" class="text-info">Condiciones Generales</a>
                                     para realizar el alta <b>online.</b>
@@ -503,7 +496,7 @@
 
                             <!-- CHECK NORMAS -->
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="check2" name="normas" value="normas" required>
+                                <input v-model="check2" type="checkbox" class="form-check-input" id="check2" name="normas" value="normas" required>
                                 <label class="form-check-label" for="check2">He leido y acepto las
                                     <a href="#" data-bs-toggle="modal" data-bs-target="#normas" class="text-info">Normas de Uso del centro</a>.
                                 </label>
@@ -539,7 +532,7 @@
 
                             <!-- CHECK PRIVACIDAD -->
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="check3" name="politica" value="privacidad" required>
+                                <input v-model="check3" type="checkbox" class="form-check-input" id="check3" name="politica" value="privacidad" required>
                                 <label class="form-check-label" for="check3">He leido y acepto la
                                     <a href="#" data-bs-toggle="modal" data-bs-target="#privacidad" class="text-info">Política de Privacidad</a>.
                                 </label>
@@ -575,11 +568,10 @@
 
                         </div>
                     </fieldset>
-
                     <!-- BOTONES DE ACEPTAR Y CANCELAR -->
                     <div class="mx-auto mt-5" id="botones">
                         <button type="submit" class="btn btn-lg btn-outline-success"
-                        @click="validacionCuentaBanco">Aceptar</button>
+                        @click="validacionParte2">Aceptar</button>
                         <button type="reset" class="btn btn-lg btn-outline-secondary">Cancelar</button>
                     </div>
 
@@ -587,16 +579,16 @@
             </form>
         </div>
     </div>
- 
 </template>
 
+<!-- JAVASCRIPT REALIZADO POR LUIS PEREZ -->
 <script>
 import Swal from 'sweetalert2';
 
 export default {
   name: 'Inscripcion-Vue',
   data(){
-      return {
+      return { // Variables
           exprRegMovil: /^[67][0-9]{8}$/,
           exprRegDCuenta: /^[0-9]{4}$/,
           exprRegDc: /^[0-9]{2}$/,
@@ -616,28 +608,50 @@ export default {
           esVisible: true, //CAMBIA DE 1º A 2º PARTE DE FORM
           esValido:false, 
           esHombre:false, esMujer:false, esOtros:false, //GENERO
-          mesSel:false, seisMesesSel:false, añoSel:false //CUOTAS
-          
+          mesSel:false, seisMesesSel:false, añoSel:false, //CUOTAS
+          check1:"",
+          check2:"",
+          check3:""
       }
   },
-  methods: {
-        cuotaSeleccionada(laCuota,cuotaSel,opcion2,opcion3){
-            if(laCuota){
-                document.getElementById(cuotaSel).innerHTML = "Cuota seleccionada";    
+  methods: { //Metodos
+        cuotaSeleccionada(cuotaSel,btnSel,opcion2,opcion3){ //Modifica el texto del boton de ofertas, en funcion de cual esté seleccionado
+            if(cuotaSel){
+                document.getElementById(btnSel).innerHTML = "Cuota seleccionada";    
                 document.getElementById(opcion2).innerHTML = "Seleccionar";
                 document.getElementById(opcion3).innerHTML = "Seleccionar";
             }
             else{
-                document.getElementById(cuotaSel).innerHTML = "Seleccionar";
+                document.getElementById(btnSel).innerHTML = "Seleccionar";
             }        
         },
-        
-        datosRellenados() {
+        //Comprueba que todos los campos de la 1 parte del form estén rellenados y que sean validos.
+        //Mostrará un msg de error en función de donde esté el fallo
+        datosRellenados() { 
             if(!this.nombre || !this.apellidos || !this.dni || !this.direccion || !this.correo || !this.correo2 || !this.telefono || !this.dia || !this.mes || !this.año ){
                 this.popup("Por favor, rellena los datos correspondientes", "error");
             }
             else{
-                if( this.validacionDni() ){
+                if(!this.validacionDni()){
+                    this.popup("DNI no válido","error");
+                }
+                else if(!this.esMayorEdad()){
+                    this.popup("La edad introducida es de un menor de edad","warning")
+                }
+                else if(!this.correosIguales()){
+                    this.popup("Los correos no coinciden", "info");
+                }
+                else if(!this.validacionEmail()){
+                    this.popup("Correo no válido", "error");
+                }
+                else if(!this.validacionMovil()){
+                    this.popup("Número de teléfono no válido","error");
+                }
+                else{
+                    this.esVisible=!this.esVisible;
+                    this.popupConfirmacion("¿Estás seguro de querer guardar estos datos?","warning");
+                }
+                /*if( this.validacionDni() ){
                     if( this.esMayorEdad() ){
                         if( this.correosIguales() ){
                             if ( this.validacionEmail() ){
@@ -663,11 +677,11 @@ export default {
                 }
                 else{
                     this.popup("DNI no válido","error");
-                } 
+                } */
             }
         },
 
-        calcularEdad(dia,mes,año) {
+        calcularEdad(dia,mes,año) { // Calcula la edad mediente los datos introducidos en el form y la devuelve
             var fechaActual = new Date();
             var fechaNac = new Date(año,mes,dia);
             var edad = fechaActual.getFullYear() - fechaNac.getFullYear();
@@ -677,7 +691,7 @@ export default {
             }
             return edad;
         },
-
+        //Devuelve true si el metodo 'calcularEdad()' le devuelve un numero mayor a 18
         esMayorEdad(){
             if ( this.calcularEdad(this.dia,this.mes,this.año) >= 18 ){
                 return true
@@ -686,7 +700,7 @@ export default {
                 return false
             }
         },
-
+        
         validacionMovil() {
             this.esValido = this.exprRegMovil.test(this.telefono);
             return this.esValido
@@ -710,15 +724,21 @@ export default {
                 return false
             }
         },
-        
-        validacionCuentaBanco(){
-            if(!this.iban || !this.entidad || !this.oficina || !this.dc || !this.numCuenta){
+        //Comprueba que todos los campos de la parte 2 del form estén rellenados y que sean validos.
+        //Mostrará un msg de error en función de donde esté el fallo
+        validacionParte2(){
+            if(!this.mesSel && !this.seisMesesSel  && !this.añoSel){
+                this.popup("Por favor, seleccione una cuota", "info")
+            }
+            else if(!this.iban || !this.entidad || !this.oficina || !this.dc || !this.numCuenta || !this.check1 || !this.check2 || !this.check3 ){
                 this.popup("Por favor, completa los campos restantes", "error");
             }
+            
+            else if( !this.valIban() || !this.valEntidad() || !this.valOficina() || !this.valDc() || !this.valNumCuenta() ){
+                this.popup("Los datos de cuenta no son válidos", "error")
+            }
             else{
-                if( !this.valIban() || !this.valEntidad() || !this.valOficina() || !this.valDc() || !this.valNumCuenta() ){
-                    this.popup("Los datos de cuenta no son válidos", "error")
-                }
+                this.popup("Formulario rellenado con éxito. Inscripción realizada.","success")
             }
         },
         valIban(){
@@ -739,7 +759,6 @@ export default {
         
         popup(message, status) {
             Swal.fire({
-
                 customClass : {
                     title: 'swal2-title',
                     cancelButton: 'swal2-cancel',
@@ -781,7 +800,7 @@ export default {
   }
 } 
 </script>
-
+<!-- CSS REALIZADO POR LUIS PEREZ -->
 <style scoped>
 .seleccionada{
     background-color: rgb(238, 82, 71);
@@ -808,7 +827,6 @@ form button:active{
     border-color: red;
 }
 #principal{
-    /*background-image: url(../imgs/bici.jpg);*/
     text-align: left; 
 }
 #cuerpo{
