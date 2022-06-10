@@ -43,9 +43,6 @@
                             </div>
                     </div>
 
-
- <button class="btn btn-outline-info" @click="editarValoracion(valoracion.ID)">Editar</button>
-
   <div class="containerTienda">
     <h1 class="mainColor">Nuestros Productos</h1>
     <div class="row gx-0 d-flex justify-content-center">
@@ -108,12 +105,12 @@ export default {
   data(){
     return{
        arrayProductos : [
-          {id:1, nombre: "Proteina Whey", descripcion:"Sabor de Chocolate/Vainilla/Fresa", img:"proteinas.png", precio:"40€", cantidad:0},
-          {id:2, nombre: "Rodilleras", descripcion:"Tallas s/m/l/xl", img:"rodilleras.png", precio:"20€", cantidad:0 },
-          {id:3, nombre: "Creatina", descripcion:"Tamaño 1kg", img:"creatina.png", precio:"40€", cantidad:0},
-          {id:4, nombre: "Guantes", descripcion:"Tallas s/m/l/xl", img:"guantes.png", precio:"10€", cantidad:0},
-          {id:5, nombre: "Straps", descripcion:"Tallas s/m/l/xl", img:"straps.png", precio:"15€", cantidad:0},
-          {id:6, nombre: "Shaker", descripcion:"Colores Rojo/Blanco/Gris", img:"shaker.png", precio:"40 €", cantidad:0},
+          {id:0, nombre: "Proteina Whey", descripcion:"Sabor de Chocolate/Vainilla/Fresa", img:"proteinas.png", precio:"40€", cantidad:0},
+          {id:1, nombre: "Rodilleras", descripcion:"Tallas s/m/l/xl", img:"rodilleras.png", precio:"20€", cantidad:0 },
+          {id:2, nombre: "Creatina", descripcion:"Tamaño 1kg", img:"creatina.png", precio:"40€", cantidad:0},
+          {id:3, nombre: "Guantes", descripcion:"Tallas s/m/l/xl", img:"guantes.png", precio:"10€", cantidad:0},
+          {id:4, nombre: "Straps", descripcion:"Tallas s/m/l/xl", img:"straps.png", precio:"15€", cantidad:0},
+          {id:5, nombre: "Shaker", descripcion:"Colores Rojo/Blanco/Gris", img:"shaker.png", precio:"40 €", cantidad:0},
         ],
 
         arrayCarro : [
@@ -136,19 +133,29 @@ export default {
         descripcion: producto.descripcion,
         img: producto.img,
         precio: producto.precio,
-        cantidad:1
-      }
+        cantidad:producto.cantidad
+        }
 
-    
+        if(this.arrayCarro.length==0){
         this.arrayCarro.push(newProducto)
+        newProducto.cantidad ++
+        }
+       // if(this.arrayCarro.length!=0 ){
+       //   this.arrayCarro[id].cantidad ++
+       //   }
+        
+
+         if(this.arrayCarro.length!=0 ){
+          for(let i=0; i<this.arrayProductos; i++)
+          if(this.arrayProductos[i].id==newProducto.id){
+          this.arrayCarro[i].cantidad ++
+          break
+          }else
+          this.arrayCarro.push(newProducto)
+         }
+        
+    },
     
-
-
-      
-     
-     
-
-
     crearValoracion() {
         const lista = this.valoraciones;
         let dia = new Date();
@@ -176,18 +183,8 @@ export default {
           this.popup("Cambios realizados con exito","success");
         }
       },
-
-
-
+  }
 }
-  
-
-  
-
-
-
-
-
 </script>
 
 <style scoped>
