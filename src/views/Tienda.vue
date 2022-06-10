@@ -124,7 +124,6 @@ export default {
 
   components:{
     Productos
-
   },
 
   methods:{
@@ -139,34 +138,15 @@ export default {
         precio: producto.precio,
         cantidad:1
       }
-      if(this.arrayCarro.length==0){
-        this.arrayCarro.push(newProducto)
-      }
-      /*else if(this.arrayCarro.length!=0){
-        if (this.arrayCarro.indexOf(newProducto)!=-1) {
-          newProducto.cantidad++
-        }
-      }*/
-     
-      if(this.arrayCarro.indexOf(newProducto)!=-1)
-      this.arrayCarro[id].cantidad++
-      else
-       this.arrayCarro.push(newProducto)
-      
-      
-       /*  for (let i = 0; i < this.arrayCarro.length; i++) {
-          if( this.arrayCarro.indexOf(newProducto)==-1){
-             this.arrayCarro.push(newProducto)
-             break
-          }
-      else{
-            this.arrayCarro[i].producto.cantidad=+1
-            break
-          }*/
-       
-       } 
-    },
 
+    
+        this.arrayCarro.push(newProducto)
+    
+
+
+      
+     
+     
 
 
     crearValoracion() {
