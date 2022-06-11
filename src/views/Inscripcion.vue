@@ -1,4 +1,4 @@
-<template> <!--HTML REALIZADO POR LUIS PEREZ -->
+<template> <!--HTML REALIZADO POR LUIS FERNANDO PEREZ HURTADO-->
     <div id="principal" class="containerInscripcion">
         <div class="well mb-4 text-muted border shadow" id="cuerpo">
             <form action="tratamientodeDatos.php" method="get" autocomplete="on" class="my-5 mx-5">
@@ -581,7 +581,7 @@
     </div>
 </template>
 
-<!-- JAVASCRIPT REALIZADO POR LUIS PEREZ -->
+<!-- JAVASCRIPT REALIZADO POR LUIS FERNANDO PEREZ HURTADO-->
 <script>
 import Swal from 'sweetalert2';
 
@@ -800,7 +800,7 @@ export default {
   }
 } 
 </script>
-<!-- CSS REALIZADO POR LUIS PEREZ -->
+<!-- CSS REALIZADO POR LUIS FERNANDO PEREZ HURTADO -->
 <style scoped>
 .seleccionada{
     background-color: rgb(238, 82, 71);
