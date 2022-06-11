@@ -15,31 +15,35 @@
                                             <tr>
                                                 <td>   
                                                     <div v-for="producto in arrayCarro" v-bind:key="producto.index">
-                                                    <Productos :img="producto.img"/>
+                                                      <Productos :img="producto.img"/>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div v-for="producto in arrayCarro" v-bind:key="producto.index">
-                                                    <Productos :nombre="producto.nombre"/>
-                                                </div>
+                                                      <Productos :nombre="producto.nombre"/>
+                                                    </div>
                                                 </td>
-                                                 <td>
+                                                <td>
                                                     <div v-for="producto in arrayCarro" v-bind:key="producto.index">
-                                                    <Productos :precio="producto.precio"/>
-                                                </div>
+                                                      <Productos :precio="producto.precio"/>
+                                                    </div>
                                                 </td>
-                                                 <td>
+                                                <td>
                                                     <div v-for="producto in arrayCarro" v-bind:key="producto.index">
-                                                    <Productos :cantidad="producto.cantidad"/>
-                                                </div>
+                                                      <Productos :cantidad="producto.cantidad"/>
+                                                    </div>
                                                 </td>
-                                                
+                                                <td>
+                                                    <div v-for="producto in arrayCarro" v-bind:key="producto.index">
+                                                      <button class="btn btn-danger" type="button" style="width: 80%;" id="quitar-producto" @click="quitarProducto(producto.id)">Quitar producto</button>
+                                                    </div>
+                                                </td>
                                               </tr> 
                                         </thead>
                                         <tbody></tbody>
                                     </table>
 
-                                    <a href="#" id="vaciar-carrito" class="button u-full-width">Vaciar Carrito</a>
+                                    <button class="btn btn-danger" type="button" style="width: 80%;" id="vaciar-carrito" @click="vaciarCarrito()">Vaciar Carrito</button>
                             </div>
                     </div>
 
@@ -51,7 +55,8 @@
               <img src="@/assets/Productos/proteinas.png" alt="">
               <h2>Proteinas</h2>
               <h6>Sabor chocolate/vainilla</h6>
-              <h4>50€</h4><button class="btn btn-primary" type="button" style="width: 80%;" id="1" @click="añadirProducto(0)">Comprar</button>
+              <h4>50€</h4>
+              <button class="btn btn-primary" type="button" style="width: 80%;" id="1" @click="añadirProducto(0)">Comprar</button>
           </div>
       </div>
       <div class="col-md-6 col-lg-4 col-xl-3 columna" >
@@ -59,7 +64,8 @@
               <img src="@/assets/Productos/rodilleras.png" alt="">
               <h2>Rodilleras</h2>
               <h6>Talla s/m/l/xl</h6>
-              <h4>20€</h4><button class="btn btn-primary" type="button" style="width: 80%;" id="2" @click="añadirProducto(1)">Comprar</button>
+              <h4>20€</h4>
+              <button class="btn btn-primary" type="button" style="width: 80%;" id="2" @click="añadirProducto(1)">Comprar</button>
           </div>
       </div>
       <div class="col-md-6 col-lg-4 col-xl-3 columna" >
@@ -67,7 +73,8 @@
               <img src="@/assets/Productos/creatina.png" alt="">
               <h2>Creatina</h2>
               <h6>Formato de 1kg</h6>
-              <h4>30€</h4><button class="btn btn-primary" type="button" style="width: 80%;" id="3" @click="añadirProducto(2)">Comprar</button>
+              <h4>30€</h4>
+              <button class="btn btn-primary" type="button" style="width: 80%;" id="3" @click="añadirProducto(2)">Comprar</button>
           </div>
       </div>
       <div class="col-md-6 col-lg-4 col-xl-3 columna" >
@@ -75,7 +82,8 @@
               <img src="@/assets/Productos/guantes.png" alt="">
               <h2>Guantes</h2>
               <h6>Talla s/m/l/xl</h6>
-              <h4>12€</h4><button class="btn btn-primary" type="button" style="width: 80%;" id="4"  @click="añadirProducto(3)">Comprar</button>
+              <h4>12€</h4>
+              <button class="btn btn-primary" type="button" style="width: 80%;" id="4"  @click="añadirProducto(3)">Comprar</button>
           </div>
       </div>
       <div class="col-md-6 col-lg-4 col-xl-3 columna" >
@@ -83,7 +91,8 @@
               <img src="@/assets/Productos/straps.png" alt="">
               <h2>Straps</h2>
               <h6>Talla m/l/xl</h6>
-              <h4>15€</h4><button class="btn btn-primary" type="button" style="width: 80%;" id="5"  @click="añadirProducto(4)">Comprar</button>
+              <h4>15€</h4>
+              <button class="btn btn-primary" type="button" style="width: 80%;" id="5"  @click="añadirProducto(4)">Comprar</button>
           </div>
       </div>
       <div class="col-md-6 col-lg-4 col-xl-3 columna">
@@ -91,7 +100,8 @@
               <img src="@/assets/Productos/shaker.png" alt="">
               <h2>Shaker</h2>
               <h6>Color negro/rojo</h6>
-              <h4>10€</h4><button class="btn btn-primary" type="button" style="width: 80%;" id="6"  @click="añadirProducto(5)">Comprar</button>
+              <h4>10€</h4>
+              <button class="btn btn-primary" type="button" style="width: 80%;" id="6"  @click="añadirProducto(5)">Comprar</button>
           </div>
       </div>
     </div>
@@ -137,52 +147,52 @@ export default {
         }
 
         if(this.arrayCarro.length==0){
-        this.arrayCarro.push(newProducto)
-        newProducto.cantidad ++
-        }
-       // if(this.arrayCarro.length!=0 ){
-       //   this.arrayCarro[id].cantidad ++
-       //   }
-        
-
-         if(this.arrayCarro.length!=0 ){
-          for(let i=0; i<this.arrayProductos; i++)
-          if(this.arrayProductos[i].id==newProducto.id){
-          this.arrayCarro[i].cantidad ++
-          break
-          }else
           this.arrayCarro.push(newProducto)
-         }
-        
+          newProducto.cantidad++
+        }
+        else {
+          if(this.arrayCarro.length != 0 ) {
+            let encontrado = false;
+            for(let i=0; i < this.arrayCarro.length && encontrado == false; i++) {
+              if(this.arrayCarro[i].id==newProducto.id)
+              {
+                this.arrayCarro[i].cantidad++
+                encontrado = true
+              }
+            }
+
+            if (encontrado == false) {
+              this.arrayCarro.push(newProducto)
+              newProducto.cantidad++
+            }                       
+          }
+        }
     },
-    
-    crearValoracion() {
-        const lista = this.valoraciones;
-        let dia = new Date();
-        let newValoracion = {
-          usuario: this.usuario,
-          comentario:this.comentario,
-          fecha: dia.getDate() + "/" + (dia.getMonth()+1) + "/" + dia.getFullYear() + " " + dia.getHours() + ":" + dia.getMinutes(),
-          puntos: this.puntuacion.valueOf(),
-          ID: this.idActual
-        };
-        if (newValoracion.usuario == "") { newValoracion.usuario = "Anónimo"; }
-        if (newValoracion.comentario == "") { newValoracion.comentario = "[Sin comentario]"; }
-        lista.push(newValoracion);
-        this.idActual++;
-      },
-    editarValoracion(id) {
-        let valoracion = this.valoraciones[id];
-        let nuevoComentario = prompt("Introduzca el nuevo comentario",valoracion.comentario);
-        
-        if(nuevoComentario==null || nuevoComentario==valoracion.comentario){
-          this.popup("No se han realizado cambios","info");
-        }
-        else{
-          valoracion.comentario = nuevoComentario;
-          this.popup("Cambios realizados con exito","success");
-        }
-      },
+
+    quitarProducto(id) {
+      if(this.arrayCarro.length != 0 ) {
+            let encontrado = false
+            for(let i=0; i < this.arrayCarro.length && encontrado == false; i++) {
+              if(this.arrayCarro[i].id==id)
+              {
+                encontrado = true
+
+                if (this.arrayCarro[i].cantidad > 1) {
+                  this.arrayCarro[i].cantidad--
+                }
+                else {
+                  this.arrayCarro.splice(i, 1);
+                }
+              }
+            }                     
+          }
+    },
+
+    vaciarCarrito() {
+      if(this.arrayCarro.length != 0 ) {
+        this.arrayCarro = []
+      }
+    }
   }
 }
 </script>

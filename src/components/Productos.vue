@@ -36,7 +36,8 @@ export default {
         descripcion: String,
         img: String,
         precio: String,
-        cantidad:Number
+        cantidad:Number,
+        boton: HTMLElement
         
     },
 
