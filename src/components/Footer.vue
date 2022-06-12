@@ -1,5 +1,6 @@
 <template>
     <footer>
+        <!-- Realizado por Juan Casanova Gago -->
         <div class="containerFooter py-4 py-lg-5">
             <div class="myFooter">
                 <div class="row justify-content-center">
@@ -8,7 +9,7 @@
                         <div class="row gx-0">
                             <router-link class="col-4" :class="$route.name == 'Home' ? 'active-nav' : ''" to="/"><a class="link-secondary">Home</a></router-link>
                             <router-link class="col-4" :class="$route.name == 'Horario' ? 'active-nav' : ''" to="/horario"><a class="link-secondary">Horario</a></router-link>
-                            <router-link class="col-4" :class="$route.name == 'Teachers' ? 'active-nav' : ''" to="/teachers"><a class="link-secondary">Profesores</a></router-link>
+                            <router-link class="col-4" :class="$route.name == 'Profesores' ? 'active-nav' : ''" to="/profesores"><a class="link-secondary">Profesores</a></router-link>
                             <router-link class="col-4" :class="$route.name == 'Inscripcion' ? 'active-nav' : ''" to="/inscripcion"><a class="link-secondary">Inscripción</a></router-link>
                             <router-link class="col-4" :class="$route.name == 'About' ? 'active-nav' : ''" to="/about"><a class="link-secondary">About</a></router-link>
                             <router-link class="col-4" :class="$route.name == 'Tienda' ? 'active-nav' : ''" to="/tienda"><a class="link-secondary">Tienda</a></router-link>

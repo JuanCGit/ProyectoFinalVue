@@ -1,7 +1,9 @@
-<template> <!--HTML REALIZADO POR LUIS FERNANDO PEREZ HURTADO-->
+<template> 
     <div id="principal" class="containerInscripcion">
+        <!-- Realizado por Luis Pérez Hurtado -->
         <div class="well mb-4 text-muted border shadow" id="cuerpo">
             <form action="tratamientodeDatos.php" method="get" autocomplete="on" class="my-5 mx-5">
+                <h1 class="my-5 mainColor">Inscríbete!</h1>
 
                 <div v-if="esVisible"><!---->
                     <!-- DATOS PERSONALES -->

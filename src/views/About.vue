@@ -1,20 +1,20 @@
 <template>
   <div class="container about">
+    <!-- Realizado por Lucas Ezequiel Gyori -->
     <div class="miembros">
-      <h1 class="mb-4 display-4">Nosotros</h1>
-
+      <h1 class="my-5">Sobre <span class="mainColor">Nosotros</span></h1>
       <div @click="abrirLink('https://github.com/JuanCGit')" class="row row-cols-1 row-cols-md-2 cards">
         <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="@/assets/fotoJuan.png" alt="Juan Casanova Gago"></div>
         <div class="col-xxl-10 d-flex flex-column justify-content-center text-lg-start">
-            <h3>Juan Casanova</h3>
-            <p>Desde pequeño tengo afán a la informática y todo lo que envuelve el tema. Conrespecto a mi motivación personal, la curiosidad y el deseo constante de aprender cosas nuevas me impulsan a desarrollarme constantemente.</p>
+            <h3>Juan Casanova Gago</h3>
+            <p>Desde pequeño me ha interesado la informática y todo la rodea. Con respecto a mi motivación personal, la curiosidad y el deseo constante de aprender cosas nuevas me impulsan a desarrollarme constantemente.</p>
         </div>
       </div>
 
       <div @click="abrirLink('https://github.com/LucasEG1')" class="row row-cols-1 row-cols-md-2 cards">
         <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="@/assets/fotoLucas.png" alt="Lucas Ezequiel Gyori"></div>
         <div class="col-xxl-10 d-flex flex-column justify-content-center text-lg-start">
-            <h3>Lucas Gyori</h3>
+            <h3>Lucas Ezequiel Gyori</h3>
             <p>Tras mucho tiempo sin saber qué quería estudiar, me decanté lo que más me gusta: la programación. Gracias a esta decisión me dedico a algo útil, interesante y que me permite tener tiempo libre para desconectar.</p>
         </div>
       </div>
@@ -30,15 +30,14 @@
       <div @click="abrirLink('https://github.com/lperezhurtado')" class="row row-cols-1 row-cols-md-2 cards">
         <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="@/assets/fotoLuis.png" alt="Luis Pérez Hurtado"></div>
         <div class="col-xxl-10 d-flex flex-column justify-content-center text-lg-start">
-            <h3>Luis Perez Hurtado</h3>
+            <h3>Luis Pérez Hurtado</h3>
             <p>Soy Luis, futuro desarrollador web. Me gusta mucho la programación, una de mis pasiones y pienso dedicarme a ello. Aprender cosas nuevas no es un reto para mí, así que ¡a por todas!</p>
         </div>
       </div>
     </div>
     <!-- N U E S T R O  P R O Y E C T O -->
     <div class="proyecto">
-      <h1 class="mb-4 display-4">Nuestro proyecto</h1>
-      
+      <h1 class="my-5">Nuestro <span class="mainColor">Proyecto</span></h1>
       <div class="row row-cols-1 row-cols-md-2 cards" @click="abrirLink('https://github.com/JuanCGit/ProyectoFinalVue')">
         <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="@/assets/myGym.png"/></div>
         <div class="col-xxl-10 d-flex flex-column justify-content-center">
@@ -52,7 +51,7 @@
       </div>
     </div>
     <div class="tecnologias">
-      <h1 class="mb-4 display-4">Tecnologías utilizadas</h1>
+      <h1 class="my-5"><span class="mainColor">Tecnologías</span> usadas</h1>
       
       <div  @click="abrirLink('https://vuejs.org/')" class="row row-cols-1 row-cols-md-2 cards">
         <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="@/assets/logoVue.png"/></div>
@@ -92,7 +91,6 @@ export default {
 
 <style scoped lang="scss">
 .about {
-  padding-top: 50px;
   padding-bottom: 50px;
 
   p {

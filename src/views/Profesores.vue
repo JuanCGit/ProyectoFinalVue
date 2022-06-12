@@ -1,6 +1,6 @@
 <template>
   <div class="home containerTeacher">
-    <h1 class="mb-5">Nuestros <span class="mainColor">Profesores</span></h1>
+    <h1 class="my-5">Nuestros <span class="mainColor">Profesores</span></h1>
     <div class="row gx-0 flex-row">
         <div class="col"></div>
         <div class="col d-flex justify-content-center align-items-center">
@@ -88,9 +88,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.teachersContainer{
-  padding: 0 65px 0 40px;
-}
 .noTeacher {
   margin-top: 50px;
   opacity: 80%;
@@ -112,6 +109,6 @@ img {
   opacity: 100% !important;
 }
 .containerTeacher {
-  margin: 100px 0 100px 0;
+  margin: 25px 0 65px 0;
 }
 </style>
