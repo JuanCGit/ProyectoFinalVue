@@ -5,11 +5,14 @@
                 <div class="row justify-content-center">
                     <div class="col-sm-6 col-md-6 col-xl-4 text-center text-xl-center d-flex flex-column item">
                         <h3 class="fs-6 fw-bold mb-3 mt-3">MAPA DE LA WEB</h3>
-                        <ul class="list-unstyled">
-                            <li><a class="link-secondary" href="#">Ejemplo Página 1</a></li>
-                            <li><a class="link-secondary" href="#">Ejemplo Página 2</a></li>
-                            <li><a class="link-secondary" href="#">Ejemplo Página 3</a></li>
-                        </ul>
+                        <div class="row gx-0">
+                            <router-link class="col-4" :class="$route.name == 'Home' ? 'active-nav' : ''" to="/"><a class="link-secondary">Home</a></router-link>
+                            <router-link class="col-4" :class="$route.name == 'Horario' ? 'active-nav' : ''" to="/horario"><a class="link-secondary">Horario</a></router-link>
+                            <router-link class="col-4" :class="$route.name == 'Teachers' ? 'active-nav' : ''" to="/teachers"><a class="link-secondary">Profesores</a></router-link>
+                            <router-link class="col-4" :class="$route.name == 'Inscripcion' ? 'active-nav' : ''" to="/inscripcion"><a class="link-secondary">Inscripción</a></router-link>
+                            <router-link class="col-4" :class="$route.name == 'About' ? 'active-nav' : ''" to="/about"><a class="link-secondary">About</a></router-link>
+                            <router-link class="col-4" :class="$route.name == 'Tienda' ? 'active-nav' : ''" to="/tienda"><a class="link-secondary">Tienda</a></router-link>
+                        </div>
                     </div>
                     <div class="col-sm-6 col-md-6 col-xl-4 text-center text-xl-center d-flex flex-column item">
                         <h3 class="fs-6 fw-bold mb-3 mt-3">CONTACTO</h3>
@@ -51,4 +54,11 @@ export default {
     }
     box-shadow: 5px -5px 10px rgb(204, 204, 204);
 }
+
+.active-nav {
+    a{
+        color: #e9172b !important;
+    }
+}
+
 </style>

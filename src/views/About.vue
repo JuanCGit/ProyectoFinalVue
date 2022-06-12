@@ -4,42 +4,42 @@
       <h1 class="mb-4 display-4">Nosotros</h1>
 
       <div @click="abrirLink('https://github.com/JuanCGit')" class="row row-cols-1 row-cols-md-2 cards">
-        <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png"/></div>
-        <div class="col-xxl-10 d-flex flex-column justify-content-center">
+        <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="@/assets/fotoJuan.png" alt="Juan Casanova Gago"></div>
+        <div class="col-xxl-10 d-flex flex-column justify-content-center text-lg-start">
             <h3>Juan Casanova</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur qui fugiat ullam! Perferendis accusantium, aut iste odit nostrum numquam minima error ab non! Omnis, voluptate aperiam ut nulla sed unde!</p>
+            <p>Desde pequeño tengo afán a la informática y todo lo que envuelve el tema. Conrespecto a mi motivación personal, la curiosidad y el deseo constante de aprender cosas nuevas me impulsan a desarrollarme constantemente.</p>
         </div>
       </div>
 
       <div @click="abrirLink('https://github.com/LucasEG1')" class="row row-cols-1 row-cols-md-2 cards">
-        <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png"/></div>
-        <div class="col-xxl-10 d-flex flex-column justify-content-center">
+        <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="@/assets/fotoLucas.png" alt="Lucas Ezequiel Gyori"></div>
+        <div class="col-xxl-10 d-flex flex-column justify-content-center text-lg-start">
             <h3>Lucas Gyori</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Tras mucho tiempo sin saber qué quería estudiar, me decanté lo que más me gusta: la programación. Gracias a esta decisión me dedico a algo útil, interesante y que me permite tener tiempo libre para desconectar.</p>
         </div>
       </div>
 
-      <div @click="abrirLink('https://github.com/')" class="row row-cols-1 row-cols-md-2 cards">
-        <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png"/></div>
-        <div class="col-xxl-10 d-flex flex-column justify-content-center">
+      <div @click="abrirLink('https://github.com/RPC26')" class="row row-cols-1 row-cols-md-2 cards">
+        <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="@/assets/fotoRuben.png" alt="Rubén Pérez Castelló"></div>
+        <div class="col-xxl-10 d-flex flex-column justify-content-center text-lg-start">
             <h3>Rubén Pérez Castelló</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas sequi minus minima dolore eaque quibusdam! Nisi placeat accusamus omnis ea asperiores sunt similique, vero in tenetur sed quos quis dolorem!</p>
+            <p>¡Hola! Soy Rubén y soy estudiante de Desarrollo de aplicaciones web en el Centro Público de Formación Profesional Ausiàs March de Valencia.</p>
         </div>
       </div>
 
-      <div @click="abrirLink('https://github.com/')" class="row row-cols-1 row-cols-md-2 cards">
-        <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png"/></div>
-        <div class="col-xxl-10 d-flex flex-column justify-content-center">
+      <div @click="abrirLink('https://github.com/lperezhurtado')" class="row row-cols-1 row-cols-md-2 cards">
+        <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="@/assets/fotoLuis.png" alt="Luis Pérez Hurtado"></div>
+        <div class="col-xxl-10 d-flex flex-column justify-content-center text-lg-start">
             <h3>Luis Perez Hurtado</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae repellendus tempore alias? Minima ullam omnis repellat voluptates perspiciatis explicabo, repellendus unde non laudantium, culpa, illum odio modi ut atque et!</p>
+            <p>Soy Luis, futuro desarrollador web. Me gusta mucho la programación, una de mis pasiones y pienso dedicarme a ello. Aprender cosas nuevas no es un reto para mí, así que ¡a por todas!</p>
         </div>
       </div>
     </div>
     <!-- N U E S T R O  P R O Y E C T O -->
     <div class="proyecto">
       <h1 class="mb-4 display-4">Nuestro proyecto</h1>
-
-      <div class="row row-cols-1 row-cols-md-2 cards">
+      
+      <div class="row row-cols-1 row-cols-md-2 cards" @click="abrirLink('https://github.com/JuanCGit/ProyectoFinalVue')">
         <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="@/assets/myGym.png"/></div>
         <div class="col-xxl-10 d-flex flex-column justify-content-center">
             <h2 class="mainColor">My Gym</h2>
@@ -55,23 +55,23 @@
       <h1 class="mb-4 display-4">Tecnologías utilizadas</h1>
       
       <div  @click="abrirLink('https://vuejs.org/')" class="row row-cols-1 row-cols-md-2 cards">
-        <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="@/assets/VueLogo.png"/></div>
+        <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="@/assets/logoVue.png"/></div>
         <div class="col-xxl-10 d-flex flex-column justify-content-center">
             <h2 style="color: #42b883">Vue.js</h2>
             <p>Vue.js es un framework de JavaScript de código abierto para la construcción de interfaces de usuario y aplicaciones de una sola página. Fue creado por Evan You, y es mantenido por él y por el resto de los miembros activos del equipo central que provienen de diversas empresas como Netlify y Netguru.</p>
         </div>
       </div>
       <div  @click="abrirLink('https://nodejs.org/es/')" class="row row-cols-1 row-cols-md-2 cards">
-        <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="@/assets/NodeJSLogo.png"/></div>
+        <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="@/assets/logoNodeJS.png"/></div>
         <div class="col-xxl-10 d-flex flex-column justify-content-center">
             <h2 style="color: #8ac400">Node.js</h2>
             <p>Node.js es un entorno en tiempo de ejecución multiplataforma, de código abierto, para la capa del servidor basado en el lenguaje de programación JavaScript, asíncrono, con E/S de datos en una arquitectura orientada a eventos y basado en el motor V8 de Google.</p>
         </div>
       </div>
       <div @click="abrirLink('https://getbootstrap.com/')" class="row row-cols-1 row-cols-md-2 cards">
-        <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="@/assets/BootstrapLogo.png"/></div>
+        <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="@/assets/logoBootstrap.png"/></div>
         <div class="col-xxl-10 d-flex flex-column justify-content-center">
-            <h2 style="color: #7952b3">Bootstrap</h2>
+            <h2 style="color: #7952b3">Bootstrap 5</h2>
             <p>Bootstrap 5 es la versión más reciente de Bootstrap, el framework más popular para el desarrollo front-end responsivo.</p>
         </div>
       </div>
@@ -112,6 +112,6 @@ export default {
     box-shadow: 0 30px 80px rgba(0,0,0,0), 0 20px 70px rgba(0,0,0,0.12);
     border-radius: 15px;
     margin-bottom: 50px;
-    cursor: pointer;
+    cursor: help;
 }
 </style>
