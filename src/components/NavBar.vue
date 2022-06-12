@@ -16,7 +16,7 @@
                 <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'Inscripcion' ? 'active-nav' : ''" to="/inscripcion"><h4>Inscripcion</h4></router-link></li>
                 <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'About' ? 'active-nav' : ''" to="/about"><h4>About</h4></router-link></li>
                 <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'Tienda' ? 'active-nav' : ''" to="/tienda"><h4>Tienda</h4></router-link></li>
-               
+                <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'Valoraciones' ? 'active-nav' : ''" to="/valoraciones"><h4>Reseñas</h4></router-link></li>
             </ul>
         </div>
     </div>
