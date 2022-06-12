@@ -11,6 +11,7 @@
     "bootstrap": "5.0",
     "core-js": "^3.8.3",
     "html2pdf.js": "^0.10.1",
+    "npm": "^8.11.0",
     "sweetalert2": "^11.4.14",
     "vue": "^3.2.13",
     "vue-router": "^4.0.15"
