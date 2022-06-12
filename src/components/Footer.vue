@@ -6,9 +6,10 @@
                     <div class="col-sm-6 col-md-6 col-xl-4 text-center text-xl-center d-flex flex-column item">
                         <h3 class="fs-6 fw-bold mb-3 mt-3">MAPA DE LA WEB</h3>
                         <ul class="list-unstyled">
-                            <li><a class="link-secondary" href="#">Ejemplo Página 1</a></li>
-                            <li><a class="link-secondary" href="#">Ejemplo Página 2</a></li>
-                            <li><a class="link-secondary" href="#">Ejemplo Página 3</a></li>
+                            <li><router-link class="" :class="$route.name == 'Home' ? 'active-nav' : ''" to="/"><a class="link-secondary">Home</a></router-link></li>
+                            <li><router-link class="" :class="$route.name == 'Contact' ? 'active-nav' : ''" to="/contact"><a class="link-secondary">Contact</a></router-link></li>
+                            <li><router-link class="" :class="$route.name == 'Teachers' ? 'active-nav' : ''" to="/teachers"><a class="link-secondary">Teachers</a></router-link></li>
+                            <li><router-link class="" :class="$route.name == 'About' ? 'active-nav' : ''" to="/about"><a class="link-secondary">About</a></router-link></li>
                         </ul>
                     </div>
                     <div class="col-sm-6 col-md-6 col-xl-4 text-center text-xl-center d-flex flex-column item">
@@ -51,4 +52,11 @@ export default {
     }
     box-shadow: 5px -5px 10px rgb(204, 204, 204);
 }
+
+.active-nav {
+    a{
+            color: #e9172b !important;
+    }
+}
+
 </style>
