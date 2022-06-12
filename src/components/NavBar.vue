@@ -1,25 +1,25 @@
 <template>
     <nav class="navbar navbar-light navbar-expand-md">
-    <div class="container-fluid">
-        <router-link class="nav-link active" :class="$route.name == 'Home' ? 'active-nav' : ''" to="/">
-            <img src="@/assets/LogoSmall2.png" style="width: 40px;"/>
-        </router-link>
-        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-1">
-            <span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span>
-        </button>
-        <div id="navcol-1" class="collapse navbar-collapse">
-            <ul class="navbar-nav">
-                <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'Home' ? 'active-nav' : ''" to="/"><h4>Home</h4></router-link></li>
-                <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'Contact' ? 'active-nav' : ''" to="/contact"><h4>Contact</h4></router-link></li>
-                <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'Horario' ? 'active-nav' : ''" to="/horario"><h4>Horario</h4></router-link></li>
-                <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'Teachers' ? 'active-nav' : ''" to="/teachers"><h4>Profesores</h4></router-link></li>
-                <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'Inscripcion' ? 'active-nav' : ''" to="/inscripcion"><h4>Inscripcion</h4></router-link></li>
-                <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'About' ? 'active-nav' : ''" to="/about"><h4>About</h4></router-link></li>
-                <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'Tienda' ? 'active-nav' : ''" to="/tienda"><h4>Tienda</h4></router-link></li>
-                <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'Valoraciones' ? 'active-nav' : ''" to="/valoraciones"><h4>Reseñas</h4></router-link></li>
-            </ul>
+        <div class="container-fluid">
+            <!-- Realizado por Juan Casanova Gago -->
+            <router-link class="nav-link active" :class="$route.name == 'Home' ? 'active-nav' : ''" to="/">
+                <img src="@/assets/LogoSmall2.png" style="width: 40px;"/>
+            </router-link>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-1">
+                <span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navcol-1" class="collapse navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'Home' ? 'active-nav' : ''" to="/"><h4>Home</h4></router-link></li>
+                    <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'Profesores' ? 'active-nav' : ''" to="/profesores"><h4>Profesores</h4></router-link></li>
+                    <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'Horario' ? 'active-nav' : ''" to="/horario"><h4>Horario</h4></router-link></li>
+                    <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'Inscripcion' ? 'active-nav' : ''" to="/inscripcion"><h4>Inscripcion</h4></router-link></li>
+                    <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'Tienda' ? 'active-nav' : ''" to="/tienda"><h4>Tienda</h4></router-link></li>
+                    <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'Valoraciones' ? 'active-nav' : ''" to="/valoraciones"><h4>Reseñas</h4></router-link></li>
+                    <li class="nav-item"><router-link class="nav-link active" :class="$route.name == 'About' ? 'active-nav' : ''" to="/about"><h4>About</h4></router-link></li>
+                </ul>
+            </div>
         </div>
-    </div>
     </nav>
 </template>
 

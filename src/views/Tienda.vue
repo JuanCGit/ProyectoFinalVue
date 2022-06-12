@@ -1,6 +1,6 @@
 <template>
-
  <div class="submenu">
+    <!-- Realizado por Rubén Pérez Castelló -->
                             <img src="@/assets/carro2.png" id="imagen-carrito">
                             <div id="carrito">
                                     <table id="lista-carrito" class="u-full-width">

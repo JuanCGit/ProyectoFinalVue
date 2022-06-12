@@ -1,5 +1,6 @@
 <template>
   <div class="fondo">
+    <!-- Realizado por Juan Casanova Gago con la colaboración de Rubén Pérez Castelló -->
     <div class="containerHome">
       <div id="carousel-1" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">

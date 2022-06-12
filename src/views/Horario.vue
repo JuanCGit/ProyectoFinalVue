@@ -1,6 +1,7 @@
 <template>
     <div class="containerHorario container-fluid">
-
+      <!-- Realizado por Lucas Ezequiel Gyori con la colaboración de Juan Casanova Gago -->
+      <h1 class="my-5">Nuestras <span class="mainColor">Clases</span></h1>
       <img :src="tema == 'oscuro' ? require('@/assets/modoOscuro.png') : require('@/assets/modoClaro.png')" alt="tema" class="colorIcon">
       <div class="form-switch text-center">
         <input class="form-check-input alternarModo mb-3 mt-1" @click="[tema == 'oscuro' ? tema='claro' : tema='oscuro']" type="checkbox" checked>
@@ -8,7 +9,6 @@
       
       <div class="table-responsive">
         <table class="table mb-3" :class="[tema == 'oscuro' ? 'temaOscuro' : 'temaClaro']" id="horario">
-      
           <!--THEAD-->
           <tr>
             <th>Hora</th>
@@ -126,7 +126,6 @@
 
       <div v-if="tema=='oscuro'" class="btn rounded-pill imprimirOsc" @click="imprimir">Descargar tabla oscura</div>
       <div v-else class="btn btn-warning rounded-pill imprimirCla" @click="imprimir">Descargar tabla clara</div>
-
     </div>
 </template>
 
@@ -152,12 +151,9 @@
 
 <style scoped lang="scss">
     .containerHorario {
-        margin: 25px 0px;
+        margin: 25px 0 65px 0;
     }
-
-
     /*TABLE*/
-    
     .imprimirOsc {
       background-color: rgb(58, 51, 53);
       color: rgb(245, 222, 179);
