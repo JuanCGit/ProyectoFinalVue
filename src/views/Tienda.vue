@@ -48,7 +48,7 @@
                     </div>
 
   <div class="containerTienda">
-    <h1 class="mainColor">Nuestros Productos</h1>
+    <h1>Nuestros <span class="mainColor">Productos</span></h1>
     <div class="row gx-0 d-flex justify-content-center">
       <div class="col-md-6 col-lg-4 col-xl-3 columna" >
           <div class="producto d-flex">
