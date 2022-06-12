@@ -2,7 +2,7 @@
     <nav class="navbar navbar-light navbar-expand-md">
     <div class="container-fluid">
         <router-link class="nav-link active" :class="$route.name == 'Home' ? 'active-nav' : ''" to="/">
-            <imagen src="@/assets/LogoSmall2.png" style="width: 40px;"/>
+            <img src="@/assets/LogoSmall2.png" style="width: 40px;"/>
         </router-link>
         <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-1">
             <span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span>
@@ -31,7 +31,7 @@ export default {
   name: "NavBar-Vue",
   data(){
       return{
-          arrayProductosSeleccionados : [
+        arrayProductosSeleccionados : [
           
         ], 
          arrayProductos : [
