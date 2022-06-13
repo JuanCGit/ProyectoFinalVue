@@ -2,13 +2,13 @@
  <div class="producto">
   <table id="lista-carrito" class="u-full-width">
                                        
-                                            <tr>
-                                                <td>{{img}}</td>
-                                                <td>{{nombre}}</td>
-                                                <td>{{precio}}</td>
-                                                <td>{{cantidad}}</td>
-                                                <td></td>
-                                            </tr>
+    <tr>
+        <td>{{img}}</td>
+        <td>{{nombre}}</td>
+        <td>{{precio}}</td>
+        <td>{{cantidad}}</td>
+        <td></td>
+    </tr>
                                         
  </table>
 </div>

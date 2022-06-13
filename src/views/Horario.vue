@@ -1,6 +1,6 @@
 <template>
     <div class="containerHorario container-fluid">
-      <!-- Realizado por Lucas Ezequiel Gyori con la colaboración de Juan Casanova Gago -->
+      <!-- Realizado por Lucas Ezequiel Gyori (95%) con la colaboración de Juan Casanova Gago (5%) -->
       <h1 class="my-5">Nuestras <span class="mainColor">Clases</span></h1>
       <img :src="tema == 'oscuro' ? require('@/assets/modoOscuro.png') : require('@/assets/modoClaro.png')" alt="tema" class="colorIcon">
       <div class="form-switch text-center">

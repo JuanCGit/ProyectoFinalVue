@@ -1,6 +1,6 @@
 <template>
   <div class="container mt-5">
-    <!-- Realizado por Luis Pérez Hurtado y Lucas Ezequiel Gyori -->
+    <!-- Realizado por Luis Pérez Hurtado (50%) y Lucas Ezequiel Gyori (50%) -->
     <h1 class="my-5">Vuestras <span class="mainColor">reseñas</span></h1>
     <div class="form-switch float-end text-success">
       <input type="checkbox" class="form-check-input" @click="esAdmin=!esAdmin"> Modo ADMIN

@@ -1,6 +1,6 @@
 <template>
  <div class="submenu">
-    <!-- Realizado por Rubén Pérez Castelló -->
+    <!-- Realizado por Rubén Pérez Castelló (90%) y Luis Pérez Hurtado (10%) -->
                             <img src="@/assets/carro2.png" id="imagen-carrito">
                             <div id="carrito">
                                     <table id="lista-carrito" class="u-full-width">

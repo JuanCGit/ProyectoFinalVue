@@ -1,6 +1,7 @@
 <template>
   <div class="fondo">
     <!-- Realizado por Juan Casanova Gago con la colaboración de Rubén Pérez Castelló -->
+    <!-- NOTA: La primera versión de la página principal fue 100% de Rubén, y el diseño en Vue corresponde 75% a Juan y 25% a Rubén. --> 
     <div class="containerHome">
       <div id="carousel-1" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
