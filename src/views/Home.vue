@@ -161,7 +161,7 @@
         </div>
       </div>
       <h2 class="mt-5 text-decoration-underline fw-bold" style="color: white">
-        Seervicios Incluidos
+        Servicios Incluidos
       </h2>
       <div class="row d-xl-flex justify-content-xl-center my-5 rowTarjeta gx-0">
         <div class="col-md-6 col-lg-4 col-xxl-3">

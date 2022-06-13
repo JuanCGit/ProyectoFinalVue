@@ -7,7 +7,7 @@
         <div class="col-xxl-2 d-flex flex-column align-items-center justify-content-center"><img src="@/assets/fotoJuan.png" alt="Juan Casanova Gago"></div>
         <div class="col-xxl-10 d-flex flex-column justify-content-center text-lg-start">
             <h3>Juan Casanova Gago</h3>
-            <p>Desde pequeño me ha interesado la informática y todo la rodea. Con respecto a mi motivación personal, la curiosidad y el deseo constante de aprender cosas nuevas me impulsan a desarrollarme constantemente.</p>
+            <p>Desde pequeño me ha interesado la informática y todo lo que la rodea. Con respecto a mi motivación personal, la curiosidad y el deseo constante de aprender cosas nuevas me impulsan a desarrollarme constantemente.</p>
         </div>
       </div>
 
